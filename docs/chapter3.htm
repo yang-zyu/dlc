@@ -1,0 +1,581 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head><meta content="text/html; charset=UTF-8" http-equiv="Content-type" />
+<title>Developing Linguistic Corpora: a Guide to Good Practice</title>
+<link href="exec.css" type="text/css" rel="stylesheet" />
+ <link rel="stylesheet" href="guides.css" type="text/css">
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="framework"><tr><td class="framework" align="left" valign="top"><!-- ******** START COMPONENT: main-document ********--><!-- index --><div><a href="http://www.ota.ox.ac.uk/documents/creating/dlc/"><img height="69" width="359" style="padding:0.5em" alt="AHDS LitLangLing Logo" border="0" src="ahds_litlangling_logo.gif" /></a> <div id="menu"><a href="index.htm" class="noborder"><img alt="Guide to Good Practice Post" border="0" height="95" width="145" src="g2gp-post.gif" /></a><a href="index.htm">Table of Contents</a><a href="chapter2.htm">Previous Chapter</a><a href="chapter4.htm">Next Chapter</a><a href="bibliography.htm">Bibliography</a>
+<h4>Sections in this chapter:</h4>
+<a href="#section">1. What is metadata and why do you need it?</a>
+<a href="#section3">3. Editorial metadata</a>
+<a href="#section4">4. Analytic metadata</a>
+<a href="#section5">5. Descriptive metadata</a>
+<a href="#section6">6. Metadata categories for language corpora: a summary</a> 
+<a href="#section7">7. Conclusions</a>
+</div><div id="a1"><hr size="1" noshade="noshade" width="100%" /><br /> 
+<div class="global-heading1">Developing Linguistic Corpora:<br/>a Guide to Good Practice</div>
+<div class="global-heading2">Metadata for corpus work</div>
+<p class="guidesauthor">Lou Burnard, University of Oxford<br/>&#169; Lou Burnard 2004</p>
+
+<h2><a name="section">1. What is metadata and why do you need it?</a></h2>
+
+<p>
+Metadata is usually defined as 'data about data'. The word appears only six times in the 100 million word British National Corpus (BNC), in each case as a technical term from the domain of information processing. However, all of the material making up the British National Corpus predates the whole-hearted adoption of this word by the library and information science communities for one very specific kind of data about data: the kind of data that is needed to describe a digital resource in sufficient detail and with sufficient accuracy for some agent to determine whether or not that digital resource is of relevance to a particular enquiry. This so-called discovery metadata has become a major area of concern with the expansion of the World Wide Web and other distributed digital resources, and there have been a number of attempts to define standard sets of metadata for specific subject domains, for specific kinds of activity (for example, digital preservation) and more generally for resource discovery. The most influential of the generic metadata schemes has been the Dublin Core Metadata Initiative (DCMI), which (in the year after the BNC was first published), proposed 15 metadata categories which it was felt would suffice to describe any digital resource well enough for resource discovery purposes. For the linguistics community, more specific and structured proposals include those of the Text Encoding Initiative (TEI), the Open Language Archive Community (OLAC), and the ISLE Metadata Initiative (IMDI).
+</p>
+
+
+<p>These and other initiatives have as a common goal the definition of agreed sets of metadata categories which can be applied across many different resources, so that potential users can assess the usefulness of those resources for their own purposes. The theory is that in much the same way that domestic consumers expect to find standardized labelling on their grocery items (net weight in standard units, calorific value per 100 grams, indication of country of origin, etc.), so the user of digital resources will expect to find a standard set of descriptors on their data items. While there can be no doubt that any kind of metadata is better than none, and that some metadata categories are of more general interest than others, it is far less clear on what basis or authority the definition of a standard set of metadata descriptors should proceed. Digital resources, particularly linguistic corpora, are designed to serve many different applications, and their usefulness must thus be evaluated against many different criteria. A corpus designed for use in one context may not be suited to another, even though its description suggests that it will be.</p>
+<p>
+Nevertheless, it is no exaggeration to say that without metadata, corpus linguistics would be virtually impossible. Why? Because corpus linguistics is an empirical science, in which the investigator seeks to identify patterns of linguistic behaviour by inspection and analysis of naturally occurring samples of language. A typical corpus analysis will therefore gather together many examples of linguistic usage, each taken out of the context in which it originally occurred, like a laboratory specimen. Metadata restores and specifies that context, thus enabling us to relate the specimen to its original habitat. Furthermore, since language corpora are constructed from pre-existing pieces of language, questions of accuracy and authenticity are all but inevitable when using them: without metadata, the investigator has no way of answering such questions. Without metadata, the investigator has nothing but disconnected words of unknowable provenance or authenticity. </p>
+<p>
+In many kinds of corpus analysis, the objective is to detect patterns of linguistic behaviour which are common to particular groups of texts. Sometimes, the analyst examines occurrences of particular linguistic phenomena across a broad range of language samples, to see whether certain phenomena are more characteristic of some categories of text than others. Alternatively, the analyst may attempt to characterize the linguistic properties or regularities of a particular pre-defined category of texts. In either case, it is the metadata which defines the category of text; without it, we have no way of distinguishing or grouping the component texts which make up a large heterogeneous corpus, nor even of talking about the properties of a homogeneous one. </p>
+
+<h2><a name="section2">2. Scope and representation of metadata</a></h2>
+
+<p>
+Many different kinds of metadata are of use when working with language corpora. In addition to the simplest descriptive metadata already mentioned, which serves to identify and characterize a corpus regarded as a digital resource like any other, we discuss below the following categories of metadata, which are of particular significance or use in language work: </p>
+
+<ul>
+<li>
+editorial metadata, providing information about the relationship between corpus components and their original source (<a href="#section3">3. Editorial metadata below</a>)
+</li>
+<li>
+analytic metadata, providing information about the way in which corpus components have been interpreted and analysed (<a href="#section3">4. Analytic metadata below</a>)
+</li>
+<li>
+descriptive metadata, providing classificatory information derived from internal or external properties of the corpus components (<a href="#section3">5. Descriptive metadata below</a>)
+</li>
+<li>
+administrative metadata, providing documentary information about the corpus itself, such as its title, its availability, its revision status, etc. (this section).
+</li>
+</ul>
+
+<p>
+In earlier times, it was customary to provide corpus metadata in a free standing reference manual, if at all. It is now more usual to present all metadata in an integrated form, together with the corpus itself, often using the same encoding principles or markup language. This greatly facilitates both automatic validation of the accuracy and consistency with which such documentation is provided, and also facilitates the development of more human-readable and informative software access to the contents of a corpus.</p>
+<p>
+A major influence in this respect has been the Text Encoding Initiative (TEI), which in 1994 first published an extensive set of Guidelines for the Encoding of Machine Readable Data (TEI P1). These recommendations have been widely adopted, and form the basis of most current language resource standardization efforts. A key feature of the TEI recommendations was the definition of a specific metadata component known as the TEI Header. This has four major parts, derived originally from the International Standard Bibliographic Description (ISBD), which sought to extend the well-understood principles of print bibliography to the (then!) new world of digital resources: 
+</p>
+ <ul>
+<li>
+a <em>file description</em>, identifying the computer file<a name="ref1" href="#footnote1"><sup>1</sup></a> itself and those responsible for its authorship, dissemination or publication etc., together with (in the case of a derived text such as a corpus) similar bibliographic identification for its source;
+</li>
+
+<li>
+an <em>encoding description</em>, specifying the kinds of encoding used within the file, for example, what tags have been used, what editorial procedures applied, how the original material was sampled, and so forth;
+</li>
+
+<li>
+a <em>profile description</em>, supplying additional descriptive material about the file not covered elsewhere, such as its situational parameters, topic keywords, descriptions of participants in a spoken text etc.
+</li>
+
+<li>
+a <em>revision description</em>, listing all modifications made to the file during the course of its development as a distinct object.
+</li>
+
+</ul>
+<p>
+The TEI scheme expressed its recommendations initially as an application of the Standard Generalized Markup Language (SGML: ISO 8879). More recently, it has been re-expressed as an application of the current de facto standard language of the internet: the W3C's extensible markup language (XML), information on which is readily available elsewhere. </p>
+<p>
+The scope of this article does not permit exhaustive discussion of all features of the TEI Header likely to be of relevance to corpus builders or users, but some indication of the range of metadata it supports is provided by the summary below. For full information, consult the online version of the TEI Guidelines (<a href="http://www.tei-c.org/Guidelines/HD.html">http://www.tei-c.org/Guidelines/HD.html</a>), or the Corpus Encoding Standard (<a href="http://www.cs.vassar.edu/CES">http://www.cs.vassar.edu/CES</a>)<a name="ref2" href="#footnote2"><sup>2</sup></a>.</p>
+
+<h2><a name="section3">3. Editorial metadata</a></h2>
+
+<p>
+Because electronic versions of a non-electronic original are inevitably subject to some form of distortion or translation, it is important to document clearly the editorial procedures and conventions adopted. In creating and tagging corpora, particularly large ones assembled from many sources, many editorial and encoding compromises are necessary. The kind of detailed text-critical attention possible for a smaller literary text may be inappropriate, whether for methodological or financial reasons. Nevertheless, users of a tagged corpus will not thank the encoder if arbitrary editorial changes have been silently introduced, with no indication of where, or with what regularity. Such corpora can actively mislead the unwary or partially informed user. </p>
+<p>
+A conscientious corpus builder should therefore take care to consider making explicit in the corpus markup at least the following kinds of intervention: </p>
+
+<em>
+<b>addition or omission
+</b></em>
+<p class = "definition2">
+where the encoder has supplied material not present in the source, or (more frequently in corpus work) where material has been omitted from a transcription or encoding.
+</p>
+<em>
+<b>correction
+</b></em>
+<p class = "definition2">
+where the source material is judged erroneous (for example, misprints) but the encoder wishes to preserve the original error, or simply to indicate that it has been corrected.
+</p>
+<em>
+<b>normalization
+</b></em>
+<p class = "definition2">
+where, although not considered erroneous, the source material exhibits a variant form which the encoder wishes to replace by a standardized form, either retaining the original, or silently.
+</p>
+</dl>
+<p>
+The explicit marking of material missing from an encoded text may be of considerable importance as a means of indicating where non-linguistic (or linguistically intractable) items such as symbols or diagrams or tables have been omitted: </p>
+<p class="example">
+&lt;gap desc="diagram"/&gt;
+</p>
+<p>
+Such markup is useful where the effort involved in a more detailed transcription (using more specific elements such as &lt;figure&gt; or &lt;table&gt;, or even detailed markup such as SVG or mathml) is not considered worthwhile. It is also useful where material has been omitted for sampling reasons, so as to alert the user to the dangers of using such partial transcriptions for analysis of text-grammar features:</p>
+
+<p class="example">
+&lt;div type="chapter"&gt;<br/>
+&lt;gap extent="100 sentences" cause="sampling strategy"/&gt;<br/>
+&lt;s&gt;This is not the first sentence in this chapter.&lt;/s&gt;
+</p>
+
+<p>
+As these examples demonstrate, the tagging of a corpus text encoded in XML is itself a special and powerful form of metadata, instructing the user how to interpret and reliably use the data. As a further example, consider the following hypothetical case. In transcribing a spoken English text, a word that sounds like 'skuzzy' is encountered by a transcriber who does not recognize this as one way of pronouncing the common abbreviation 'SCSI' (small computer system interface). The transcriber T1 might simply encode his or her uncertainty by a tag such as </p>
+<p class="example">
+&lt;unclear extent="two syllables" resp="T1" desc="sounds like skuzzy"/&gt;</p>
+<p>or even </p>
+<p class="example">
+&lt;gap extent="two syllables" cause="unrecognizable word"/&gt;</p>
+<p>
+Alternatively, the transcriber might wish to allow for the possibility of "skuzzy" as a lexical item while registering doubts as to its correctness, to propose a "correct" spelling for it, or simply to record that the spelling has been corrected from an unstated deviant form. This range of possibilities might be represented in a number of ways, some of which are shown here: </p>
+<p class="example">
+&lt;sic&gt;skuzzy&lt;/sic&gt;<br/>
+</p>
+
+<p class="example">
+&lt;corr&gt;SCSI&lt;/corr&gt;<br/>
+</p>
+
+<p class="example">
+&lt;choice&gt;<br/>
+&lt;sic&gt;skuzzy&lt;/sic&gt;<br/>
+&lt;corr&gt;SCSI&lt;/corr&gt;<br/>
+&lt;/choice&gt;
+</p>
+<p>
+The first of these encodings enables the encoder to signal some doubt about the authenticity of the word. The second enables the encoder to signal that the word has been corrected, without bothering to record its original form. The third provides both the dubiously authentic form and its correction, indicating that a choice must be made between them. </p>
+<p>
+This same method might be applied to the treatment of apparent typographic error in printed originals, or (with slightly different tagging since normalization is not generally regarded as the same kind of thing as correction) to the handling of regional or other variant forms. For example, in modern British English, contracted forms such as 'isn't' exhibit considerable regional variation, with forms such as 'isnae', 'int' or 'ain't' being quite orthographically acceptable in certain contexts. An encoder might thus choose any of the following to represent the Scots form 'isnae': </p>
+<p class="example">
+&lt;reg&gt;isn't&lt;/reg&gt; <br/>
+</p>
+<p class="example">
+&lt;orig&gt;isnae&lt;/orig&gt; <br/>
+</p>
+<p class="example">
+&lt;choice&gt; <br/>
+&lt;reg&gt;isn't&lt;/reg&gt; <br/>
+&lt;orig&gt;isnae&lt;/orig&gt; <br/>
+&lt;/choice&gt; <br/>
+</p>
+<p>
+Which choice amongst these variant encodings will be appropriate is a function of the intentions and policies of the encoder: these, and other aspects of the encoding policy, should be stated explicitly in the corpus documentation, or the appropriate section of the encoding description section of a TEI Header. </p>
+
+<h2><a name="section4">4. Analytic metadata</a></h2>
+<p>
+A corpus may consist of nothing but sequences of orthographic words and punctuation, sometime known as <em>plain text</em>. But, as we have seen, even deciding on which words make up a text is not entirely unproblematic. Texts have many other features worthy of attention and analysis. Some of these are structural features such as text, text subdivision, paragraph or utterance divisions, which it is the function of a markup system to make explicit, and concerning which there is generally little controversy. Other features are however (in principle at least) recognizable only by human intelligence, since they result from an understanding of the text. </p>
+<p>
+Corpus-builders do not in general have the leisure to read and manually tag the majority of their materials; detailed distinctions must therefore be made either automatically or not at all (and the markup should make explicit which was the case!). In the simplest case, a corpus builder may be able reliably to encode only the visually salient features of a written text such as its use of italic font or emphasis, or by applying probabilistic rules derived from other surface features such as capitalization or white space usage. </p>
+<p>
+At a later stage, or following the development of suitably intelligent tools, it may be possible to review the elements which have been marked as visually highlighted, and assign a more specific interpretive textual function to them. Examples of the range of textual functions of this kind include quotation, foreign words, linguistic emphasis, mention rather than use, titles, technical terms, glosses, etc. </p>
+<p>
+The performance of such tools as morpho-syntactic taggers may occasionally be improved by pre-identification of these, and of other kinds of textual features which are not normally visually salient, such as names, addresses, dates, measures, etc. It remains debatable whether effort is better spent on improving the ability of such tools to handle arbitrary text, or on improving the performance of pre-tagging tools. Such tagging has other uses however: for example, once names have been recognized, it becomes possible to attach normalized values for their referents to them, thus facilitating development of systems which can link all references to the same individual by different names. This kind of <em>named entity recognition</em> is of particular interest in the development of message understanding and other NLP systems. </p>
+<p>
+The process of encoding or tagging a corpus is best regarded as the process of making explicit a set of more or less interpretive judgments about the material of which it is composed. Where the corpus is made up of reasonably well understood material (such as contemporary linguistic usage), it is reasonably easy to distinguish such interpretive judgments from apparently objective assertions about its structural properties, and hence convenient to represent them in a formally distinct way. Where corpora are made up of less well understood materials (for example, in ancient scripts or languages), the distinction between structural and analytic properties becomes less easy to maintain. Just as, in some models of cognition at least, a text triggers meaning but does not embody it, so a text triggers multiple encodings, each of equal formal validity, if not utility. </p>
+<p>
+<em>Linguistic annotation</em> of almost any kind may be attached to components at any level from the whole text to individual words or morphemes. At its simplest, such annotation allows the analyst to distinguish between orthographically similar sequences (for example, whether the word 'Pat' at the beginning of a sentence is a proper name, a verb, or an adjective), and to group orthographically dissimilar ones (such as the negatives 'not' and 'n't'). In the same way, it may be convenient to specify the base or lemmatized version of a word as an alternative for its inflected forms explicitly, (for example to show that 'is', 'was', 'being' etc. are all forms of the same verb), or to regularize variant orthographic forms, (for example, to indicate in a historical text that 'morrow', 'morwe' and 'morrowe' are all forms of the same token). More complex annotation will use similar methods to capture one or more syntactic or morphological analyses, or to represent such matters as the thematic or discourse structure of a text. </p>
+<p>
+Corpus work in general requires a modular approach in which basic text structures are overlaid with a variety of such annotations. These may be conceptualized as operating as a series of layers or levels, or as a complex network of descriptive pointers, and a variety of encoding techniques may be used to express them (for example, XML or RDF schemas, annotation graphs, standoff markup...). </p>
+
+<h3>4.1. Categorization</h3>
+<p>
+In the TEI and other markup schemes, a corpus component may be categorized in a number of different ways. Its category may be implied by the presence of information in the header associated with the element in question (see further 5. Descriptive metadata). It may be inherited from a parent element occurrence, or explicitly assigned by an appropriate attribute. The latter case is the more widely used, but we begin by discussing some aspects of the former.</p>
+<p>
+If we say that a text is a newspaper or a novel, it is self-evident that journalistic or novelistic properties respectively are inherited by all the components making up that text. In the same way, any structural division of an XML-encoded text can specify a value which is understood to apply to all elements within it. As an example, consider a corpus composed of small ads: </p>
+<p class="example">
+&lt;adSection&gt;<br/>
+&lt;s&gt;For sale&lt;/s&gt;<br/>
+&lt;ad&gt;<br/>
+&lt;s&gt;Large French chest available... &lt;/s&gt;<br/>
+&lt;/ad&gt;<br/>
+&lt;ad&gt;<br/>
+&lt;s&gt;Pair of skis, one careful owner...&lt;/s&gt;<br/>
+&lt;/ad&gt;<br/>
+&lt;/adSection&gt;
+</p>
+<p>
+In this example, the element &lt;s&gt; has been used to enclose all the textual parts of a corpus, irrespective of their function. However, an XML processor is able to distinguish &lt;s&gt; elements appearing in different contexts, and can thus distinguish occurrences of words which appear directly inside an &lt;adSection&gt; (such as "for sale") from those which appear nested within an &lt;ad&gt; (such as "large French chest"). In this way, the XML markup provides both syntax and semantics for corpus analysis. 
+</p>
+<p>
+Attribute values may be used in the same way, to assert properties for the elements to which they are attached, and for their children. For example: </p>
+<p class="example">
+&lt;div type="section" lang="FRA"&gt;<br/>
+&lt;head&gt;Section en française&lt;/head&gt;<br/>
+&lt;s id="S1"&gt;Cette phrase est en français.&lt;/s&gt;<br/>
+&lt;s id="S2"&gt;Celle-ci également.&lt;/s&gt;<br/>
+&lt;/div&gt;<br/>
+&lt;div type="section" lang="ENG"&gt;<br/>
+&lt;head&gt;English Section&lt;/head&gt;<br/>
+&lt;s id="S3"&gt;This sentence is in English.&lt;/s&gt;<br/>
+&lt;s id="S4"&gt;As is this one.&lt;/s&gt;<br/>
+&lt;s id="S5" lang="FRA"&gt;Celle-ci est en français.&lt;/s&gt;<br/>
+&lt;s id="S6"&gt;This one is not.&lt;/s&gt;<br/>
+&lt;/div&gt;<br/>
+</p>
+<p>
+An XML application can correctly identify which sentences are in which language here, by following an algorithm such as "the language of an &lt;s&gt; element is given by its lang attribute, or (if no lang is specified) by that of the nearest parent element on which it is specified". </p>
+<p>
+As noted above, many linguistic features are inherent to the structure and organization of the text, indeed inseparable from it. A common requirement therefore is to associate an interpretive category with one or more elements at some level of the hierarchy. The most typical use of this style of markup is as a vehicle for representation of linguistic annotation, such as morphosyntactic code or root forms. For example: 
+</p>
+ <p class="example">
+&lt;s ana="NP"&gt;<br/>
+&lt;w ana="VVD" lemma="analyse"&gt;analysed&lt;/w&gt;<br/>
+&lt;w ana="NN2" lemma="corpus"&gt;corpora&lt;/w&gt;<br/>
+&lt;/s&gt;
+</p>
+<p>
+XML is, of course, a hierarchic markup language, in which analysis is most conveniently represented as a well-behaved singly-rooted tree. A number of XML techniques have been developed to facilitate the representation of multiple hierarchies, most notably <em>standoff</em> markup, in which the categorizing tags are not embedded within the text stream (as in the examples above) but in a distinct data stream, linked to locations within the actual text stream by means of hypertext style pointers. This technique enables multiple independent analyses to be represented, at the expense of some additional complexity in programming.</p>
+
+<h3>4.2. Validation of categories </h3>
+<p>
+A major advantage of using a formal language such as XML to represent analytic annotation within a text is its support for automatic validation, that is, checking that the categories used conform to a previously defined model of which categories are feasible in which contexts<a name="ref3" href="#footnote3"><sup>3</sup></a>. Where the categorization is performed by means of specific XML elements, the XML system itself can validate the legality of the tags, using a <em>schema</em> or <em>document type declaration</em>. Validation of attribute values or element content requires additional processing, for which analytic metadata is particularly important. </p>
+<p>
+As an example, consider the phrase "analysed corpora", which might be tagged as follows: </p>
+<p class="example">
+&lt;w ana="VVD"&gt;analysed&lt;/w&gt;<br/>
+&lt;w ana="NN2"&gt;corpora&lt;/w&gt;
+</p>
+<p>
+Morpho-syntactic analyses of this kind are relatively commonplace and well understood, so that (in this particular case) the encoder may feel that no further documentation or validation of the codes VVD or NN2 is needed. Suppose however that the encoder in this case wishes to do rather more than simply associate an opaque or undefined code with each &lt;w&gt; element. </p>
+<p>
+As a first step, the encoder may decide to provide a list of all possible analytic codes, giving a gloss to each, as follows: </p>
+<p class="example">
+&lt;interp id="VVD" value="past tense adjectival form of lexical verb"/&gt;
+&lt;interp id="NN2" value="plural form of common noun"/&gt;
+</p>
+<p>
+The availability of a control list of annotations, even a simple one like this, increases the sophistication of the processing that can be carried out with the corpus, supporting both documentation and validation of the codes used. If the analytic metadata is further enhanced to reflect the internal structure of the analytic codes, yet more can be done &mdash; for example, one could construct a typology of word class codes along the following lines: </p>
+<p class="example">
+&lt;interpGrp id="NN" value="common noun"&gt;<br/>
+&lt;interp id="NN1" value="singular common noun"/&gt;<br/>
+&lt;interp id="NN2" value="plural common noun"/&gt;
+&lt;/interpGrp&gt;
+ </p>
+<p>The hierarchy could obviously be extended by nesting groups of the same kind. We might for example mark the grouping of common (NN) and proper (NP) nouns in the following way: </p>
+<p class="example">
+&lt;interpGrp value="nominal"&gt;<br/>
+&lt;interpGrp id="NN"&gt;<br/>
+&lt;interp id="NN1" value="singular common noun"/&gt;<br/>
+&lt;interp id="NN2" value="plural common noun"/&gt;<br/>
+&lt;/interpGrp&gt;<br/>
+&lt;interpGrp id="NP"&gt;<br/>
+&lt;interp id="NP1" value="singular proper noun"/&gt;<br/>
+&lt;interp id="NP2" value="plural proper noun"/&gt;<br/>
+&lt;/interpGrp&gt;
+</p>
+<p>
+Alternatively, one could unbundle the linguistic interpretations entirely by regarding them as a set of typed <em>feature structures</em>, a popular linguistic formalism which is readily expressed in XML. This approach permits an XML processor automatically to identify linguistic analyses where features such as number or properness are marked, independently of the actual category code (the NN1 or NP2) used to mark the analysis. </p>
+
+<h2><a name="section5">5. Descriptive metadata</a></h2>
+<p>
+The social context within which each of the language samples making up a corpus was produced, or received, is arguably at least as significant as any of its intrinsic linguistic properties, if indeed the two can be entirely distinguished. In large mixed corpora such as the BNC, it is of considerably more importance to be able to identify with confidence such information as the mode of production or publication or reception, the type or genre of writing or speech, the socio-economic factors or qualities pertaining to its producers or recipients, and so on. Even in smaller or more narrowly focussed corpora, such variables and a clear identification of the domain which they are intended to typify are of major importance for comparative work. </p>
+<p>
+At the very least, a corpus text should indicate its provenance, (i.e. the original material from which it derives) with sufficient accuracy that the source can be located and checked against its corpus version. Existing bibliographic descriptions are easily found for conventionally published materials such as books or articles and the same or similar conventions should be applied to other materials. In either case, the goal is simple: to provide enough information for someone to be able to locate an independent copy of the source from which the corpus text derives. Because such works have an existence independent of their inclusion in the corpus, it is possible not only to verify but also to extend their descriptive metadata. </p>
+<p>
+For fugitive or spoken material, where the source may not be so easily identified and is less likely to be preserved independently of the corpus, this is less feasible. It is correspondingly important that the metadata recorded for such materials should be as all inclusive as feasible. When transcribing spoken material, for example, such features as the place and time of recording, the demographic characteristics of speakers and hearers, the social context and setting etc. are of immense value to the analyst, and cannot easily be gathered retrospectively. </p>
+<p>
+Where interpretative categories or descriptive taxonomies have been applied, for example in the definition of text types or genres, these must also be documented and defined if the user is to make full use of the material. </p>
+<p>
+To record the classification of a particular text, one or more of the following methods may be used: </p>
+<ul>
+<li>a list of descriptive keywords, either arbitrary or derived from some specific source, such as a standard bibliography;</li>
+<li>a reference to one or more of internally-defined categories, declared in the same way as other analytic metadata, each defined as unstructured prose, or as a more structured set of <em>situational parameters</em>.</li>
+</ul>
+<p>
+Despite its apparent complexity, a classificatory mechanism of this kind has several advantages over the kind of fixed classification schemes implied by simply assigning each text a fixed code, chiefly as regards flexibility and extensibility. As new ways of grouping texts are identified, new codes can be added. Cross classification is built into the system, rather than being an inconvenience. More accurate and better targetted enquiries can be posed, in terms of the markup. Above all, because the classification scheme is expressed in the same way as all the other encoding in the corpus, the same enquiry system can be used for both. </p>
+<p>
+It will rarely be the case that a corpus uses more than one reference or segmentation scheme. However, it will often be the case that a corpus is constructed using more than one editorial policy or sampling procedure and it is almost invariably the case that each corpus text has a different source or particular combination of text-descriptive features or topics.</p>
+<p>
+ To cater for this variety, the TEI scheme allows for contextual information to be defined at a number of different levels. Information relating, either to all texts, or potentially to any number of texts within a corpus should be held in the overall corpus header. Information relating either to the whole of a single text, or to potentially any of its subdivisions, should be held in a single text header. Information is typically held in the form of elements whose names end with the letters <em>decl</em> (for 'declaration'), and have a specific type. Examples include &lt;editorialDecl&gt; for editorial policies, &lt;classDecl&gt; for text classification schemes, and so on. </p>
+<p>
+The following rules define how such declarations apply: </p>
+<ul>
+<li>
+a single declaration appearing only in the corpus header applies to all texts;
+</li>
+<li>
+a single declaration appearing only in a text header applies to the whole of that text, and over-rides any declaration of the same type in a corpus header;
+</li>
+<li>
+where multiple declarations of the same type are given in a corpus header, individual texts or text components may specify those relevant to them by means of a linking attribute.
+</li>
+</ul>
+<p>
+As a simple example, here is the outline of a corpus in which editorial policy E1 has been applied to texts T1 and T3, while policy E2 applies only to text T2: </p>
+<p class="example">
+&lt;teiCorpus&gt;<br/>
+&lt;teiHeader&gt;<br/>
+...<br/>
+&lt;editorialDecl id="E1"&gt; ... &lt;/editorialDecl&gt;<br/>
+&lt;editorialDecl id="E3"&gt; ... &lt;/editorialDecl&gt;<br/>
+...<br/>
+&lt;/teiHeader&gt;<br/>
+&lt;tei.2 id="T1"&gt;<br/>
+&lt;teiHeader&gt;<br/>
+&lt;!" no editorial declaration supplied "&gt;<br/>
+&lt;/teiHeader&gt;<br/>
+&lt;text decls="E1"&gt; ... &lt;/text&gt;<br/>
+&lt;/tei.2&gt;<br/>
+&lt;tei.2 id="T2"&gt;<br/>
+&lt;teiHeader&gt;<br/>
+&lt;editorialDecl id="E2"&gt; ... &lt;/editorialDecl&gt;<br/>
+&lt;/teiHeader&gt;<br/>
+&lt;text&gt; ... &lt;/text&gt;<br/>
+&lt;/tei.2&gt;<br/>
+&lt;tei.2 id="T3"&gt;<br/>
+&lt;teiHeader&gt;<br/>
+&lt;!" no editorial declaration supplied "&gt;<br/>
+&lt;/teiHeader&gt;<br/>
+&lt;text decls="E1"&gt; ... &lt;/text&gt;<br/>
+&lt;/tei.2&gt;
+</p>
+<p>
+The same method may be applied at lower levels, with the decls attribute being specified on lower level elements within the text, assuming that all the possible declarations are specified within a single header.</p>
+<p>
+A similar method may be used to associate text descriptive information with a given text, (though not with part of a text). Corpus texts are generally selected in order to represent particular classifications, or text types, but the taxonomies from which those classifications come are widely divergent across different corpora. </p>
+<p>
+Finally, we discuss briefly the methods available for the classification of units of a text more finely grained than the complete text. These are of particular importance for transcriptions of spoken language, in which it is often of particular importance to distinguish, for example, speech of women and men, or speech produced by speakers of different socio-economic groups. Here the key concept is the provision of means by which information about individual speakers can be recorded once for all in the header of the texts they speak. For each speaker, a set of elements defining a range of such variables as age, social class, sex etc. can be defined in a &lt;participant&gt; element. The identifier of the participant is then used as the value for a who attribute supplied on each &lt;u&gt; element enclosing an utterance by the participant concerned. To select utterances by speakers according to specified participant criteria, the equivalent of a relational join between utterance and participant must be performed, using the value of this identifier. </p>
+<p>
+The same method may be applied to select speech within given social contexts or settings, given the existence in the header of a &lt;settingDesc&gt; element defining the various contexts in which speech is recorded, which can be referenced by the decls attribute attached to an element enclosing all speech recorded in a particular setting. </p>
+
+<h2><a name="section6">6. Metadata categories for language corpora: a summary</a> </h2>
+<p>
+As we have noted, the scope of metadata relevant to corpus work is extensive. In this final section, we present an overview of the kinds of 'data about data' which are regarded as most generally useful.</p>
+<p>
+Multiple <em>levels</em> of metadata may be associated with a corpus. For example, some information may relate to the corpus as a whole (for example, its title, the purpose for which it was created, its distributor, etc); other information may relate only to individual components of it (for example, the bibliographic description of an individual source text), or to groups of such components (for example, a taxonomic classification). </p>
+<p>
+In the following lists, we have supplied the TEI/XCES element corresponding with the topic in question. This is not meant to imply that all corpora should conform to TEI/XCES standards, but rather to add precision to the topics addressed.</p>
+
+<h3>6.1. Corpus identification</h3>
+<p>
+Under this heading we group information that identifies the corpus, and specifies the agencies responsible for its creation and distribution. </p>
+<ul>
+<li>
+name of corpus (&lt;titleStmt/title&gt;)
+</li>
+
+<li>
+producer (&lt;titleStmt/respStmt&gt;). The agency (individuals, research group, "principle investigator", company, institution etc.) responsible for the intellectual content of the corpus should be specified. This may also include information about any funding body or sponsor involved in producing the corpus.
+</li>
+
+<li>
+distributor (&lt;publicationStmt&gt;). The agency (individual, research group, company, institution etc) responsible for making copies of the corpus available. The following information should typically be provided:
+
+<ul>
+<li>
+name of agency &lt;publisher, distributor,&gt;
+</li>
+<li>
+contact details (postal address, email, telephone, fax) (&lt;pubPlace&gt;)
+</li>
+<li>
+date first made available by this agency (&lt;date&gt;)
+</li>
+<li>
+any specific identifier (e.g. a URN) used for the published version (&lt;idno&gt;)
+</li>
+<li>
+availability: a note summarizing any restrictions on availability, e.g. where the corpus may not be distributed in some geographic zones, or for some specific purposes, or only under some specific licensing conditions.
+</li>
+
+</ul>
+</li>
+</ul>
+<p>
+If a corpus is made available by more than one agency, this should be indicated, and the information above supplied for at least one of them. If specific licensing conditions apply to the corpus, a copy of the licence or other agreement should also be included. </p>
+
+<h3>6.2. Corpus derivation </h3>
+<p>
+Under this heading we group information that describes the sources sampled in creating the corpus.</p>
+<p>Written language resources may be derived from any of the following:</p>
+<ul>
+<li>
+books, newspapers, pamphlets etc. originally in printed form;
+</li>
+<li>
+unpublished handwritten or 'born-digital' materials;
+</li>
+<li>
+web pages or other digitally distributed materials;
+</li>
+<li>
+recorded or broadcast speech or video.
+</li>
+</ul>
+ <p>
+A description of each different source used in building a corpus should be supplied. This may take the form of a full TEI &lt;sourceDescription&gt; attached to the relevant corpus component, or it may be supplied in ancillary printed documentation, but its presence is essential. In a language corpus, samples are taken out of their context; the description of their source both restores that context and enables a degree of independent verification that the sample correctly represents the original. </p>
+
+<h4>6.2.1. Bibliographic description</h4>
+<p>
+For conventionally printed and published material, a standard bibliographic description should be supplied or referenced, using the usual conventions (author, title, publisher, date, ISBN, etc.), and using a standard citation format such as TEI, BibTeX, MLA etc. For other kinds of material, different data is appropriate: for example, in transcripts of spoken data it is customary to supply demographic information about each speaker, and the context in which the speech interaction occurs. Standards defining the range of such information useful in particular research communities should be followed where appropriate. </p>
+<p>
+Language corpora are generally created in order to represent language in use. As such, they often require more detailed description of the persons responsible for the language production they represent than a standard bibliographic description would provide. Demographic descriptions of the participants in a spoken interaction are clearly essential, but even in a work of fiction, it may also be useful to specify such characteristics for the characters represented. In both cases, the 'speech situation' may be described, including such features as the target and actual audience, the domain, mode, etc. </p>
+<h4>6.2.2. Extent</h4>
+<p>
+Information about the size of each sample and of the whole corpus should be provided, typically as a part of the metadata discussed in <a href="#section6.3.2">6.3.2. Sampling and extent</a>. </p>
+<h4>
+6.2.3. Languages </h4>
+<p>
+The natural language or languages represented in a corpus should be explicitly stated, preferably with reference to existing ISO standard language codes (ISO 639). Where more than one language is represented, their relative proportions should also be stated. For multilingual aligned or parallel corpora, source and target versions of the same language should be distinguished. (&lt;langUsage&gt;) </p>
+<h4>
+6.2.4. Classification</h4>
+<p>
+As noted earlier, corpora are not haphazard collections of text, but have usually been constructed according to some particular design, often related to some kind of categorization of textual materials. Particularly in the case where corpus components have been chosen with respect to some predefined taxonomy of text types, the classification assigned to each selected text should be formally specified. (The taxonomy itself may also need to be defined, in the same way as any other formal model; see further <a href="#section6.3.6">6.3.6. Classification (etc.) Scheme</a> below). </p>
+<p>
+A classification may take the form of a simple list of descriptive keywords, possibly chosen from some standard controlled vocabulary or ontology. Alternatively, or in addition, it may take the form of a coded value taken from some list of such values, standard or non-standard. For example, the Universal Decimal Classification might be used to characterize topics of a text, or the researcher might make up their own ad hoc classification scheme. In the latter case an associated set of definitions for the classification codes used must be supplied. </p>
+<h3>
+6.3. Corpus encoding </h3>
+<p>
+Under this heading we group the following descriptive information relating to the way in which the source documents from which the corpus was derived have been processed and managed: </p>
+<ul>
+<li>
+Project goals and research agenda (&lt;projectDesc&gt;);
+</li>
+<li>
+Sampling principles and methods employed (&lt;samplingDecl&gt;);
+</li>
+<li>
+Editorial principles and practices (&lt;editorialDecl&gt;);
+</li>
+<li>
+XML or SGML tagging used (&lt;tagsDecl&gt;);
+</li>
+<li>
+Reference scheme applied (&lt;refsDecl&gt;);
+</li>
+<li>
+Classification scheme used (&lt;classDecl&gt;).
+</li>
+</ul>
+<h4>6.3.1. Project Goals </h4>
+<p>
+Corpora are usually designed according to some specific design criteria, rather than being randomly assembled. The project goals and research agenda associated with the creation of a corpus should therefore be explicitly stated. The persons or agencies directly responsible will already have been mentioned in the corpus identification; the purpose of this section is to provide further background on such matters as the purposes for which the corpus was created, its design goals, its theoretical framework or context, its intended usage, target audience etc. Although such information is of necessity impressionistic and anecdotal, it can be very helpful to the user seeking to determine the potential relevance of the resource to their own needs. </p>
+<h4><a name="section6.3.2">6.3.2. Sampling and extent</a></h4>
+<p>
+Where a corpus has been made (as is usually the case) by selecting parts of pre-existing materials, the sampling practice should be explicitly stated. For example, how large are the samples? what is the relationship between size of sample and size of original? Were all samples taken from the beginning, middle, or end of texts? On what basis were texts selected for sampling? etc.</p>
+<p>
+The corpus metadata should also include unambiguous and verifiable information about the overall size of the corpus, the size of the sources from which it was derived, and the frequency distribution of sample sizes. Size should be expressed in meaningful units, such as orthographically defined words, or characters. </p>
+<h4>
+6.3.3. Editorial practice </h4>
+<p>
+By editorial principles and practices we mean the practices followed when transforming the original source into digital form. For textual resources, this will typically include such topics as the following, each of which may conveniently be given as a separate paragraph. </p>
+<dl>
+<em>
+correction
+</em>
+<p class = "definition2">
+how and under what circumstances corrections have been made in the text.
+</p>
+<em>
+normalization
+</em>
+<p class = "definition2">
+the extent to which the original source has been regularized or normalized.
+</p>
+<em>
+segmentation
+</em>
+<p class = "definition2">
+how has the text has been segmented, for example into sentences, tone-units, graphemic strata, etc.
+</p>
+<em>
+quotation
+</em>
+<p class = "definition2">
+what has been done with quotation marks in the original &mdash; have they been retained or replaced by entity references, are opening and closing quotes distinguished, etc.?
+</p>
+<em>
+hyphenation
+</em>
+<p class = "definition2">
+what has been done with hyphens (especially end-of-line hyphens) in the original &mdash; have they been retained, replaced by entity references, etc.?
+</p>
+<em>
+interpretation
+</em>
+<p class = "definition2">
+what analytic or interpretive information has been added to the text &mdash; only a brief characterization of the scope of such annotation is needed here; a more formal specification for such annotation may be usefully provided elsewhere, however.
+</p>
+</dl>
+
+<p>
+There is no requirement that <em>all</em> (or any) of the above be formally documented and defined. It is however, very helpful to identify whether or not information is available under each such heading, so that the end user for whom a particular category may or may not be significant can make an informed judgment of the usefulness to them of the corpus. </p>
+<h4>6.3.4. Markup scheme </h4>
+<p>
+Where a resource has been marked up in XML or SGML, or some other formal language, the markup scheme used should be documented in full, unless it is an application of some publicly defined markup vocabulary such as TEI, CES, Docbook, etc. Non XML or SGML markup is not generally recommended. </p>
+<p>
+For XML or SGML corpora not conforming to a publicly available schema, the following should be made available to the user of the corpus: </p>
+<ul>
+<li>
+a copy in electronic form of a DTD or XML Schema which can be used to validate each resource supplied;
+</li>
+<li>
+a document providing definitions for each element used in the DTD or schema (The TEI
+element definitions may be used as a model, but any equivalent description may be used);
+</li> 
+<li>
+any additional information needed to correctly process and interpret the markup scheme.
+</li>
+</ul>
+<p>
+For XML or SGML which does conform to a publicly available scheme, the following information should be supplied: </p>
+<ul>
+<li>
+name of the scheme and reference to its definition;
+</li>
+<li>
+whether the scheme has been customized or modified in any way;
+</li>
+<li>
+where modification has been made, a description of the modification or customization made, including any ancillary documentation, DTD fragments, etc.
+</li>
+</ul>
+<p>
+For schemes permitting user modification or extension (such as the TEI), documentation of the additional or modified elements provided must also be provided.</p>
+<p>
+Finally, for resources in XML or SGML, it is useful to provide a list of the elements actually marked up in the resource, indicating how often each one is used. This can be used to validate the coverage of the category of information marked up within the corpus. Such a list can then be compared with one generated automatically during validation of the corpus in order to confirm integrity of the resource. The TEI &lt;tagsDecl&gt; element is useful for this purpose. </p>
+<h4>
+6.3.5. Reference Scheme </h4>
+<p>
+By <em>reference scheme</em> we mean the recommended method used to identify locations within the corpus, for example text identifier plus sentence-number within text, physical line number within file, etc. Reference systems may be explicit, in that the reference to be used for (say) a given sentence is encoded within the text, or implicit, in that, if sentences are numbered sequentially, it is sufficient only to mark where the next sentence begins. Reference systems may depend upon logical characteristics of the text (such as those expressed in the mark up) or physical characteristics of the file in which the text is stored (such as line sequence); clearly the former are to be preferred as they are less fragile. </p>
+<p>
+A corpus may use more than one reference system concurrently, for example it is often convenient to include a referencing system defined in terms of the original source material (such as page number within source text) as well as one defined in terms of the encoded corpus. </p>
+<h4><a name="section6.3.6">6.3.6. Classification (etc.) Scheme</a></h4>
+<p>
+As noted above, a classification scheme may be defined externally (with reference to some preexisting scheme such as bibliographic subject headings) or internally. Where it is defined internally, a structure like the TEI &lt;taxonomy&gt; element may be used to document the meaning and structure of the classifications used. </p>
+<p>
+Exactly the same considerations apply to any other system of analytic annotation. For example in a linguistically annotated corpus, the classification scheme used for morphosyntactic codes or linguistic functions may be defined externally, by reference to some standard scheme such as EAGLES or the ISO Data Category Registry, or internally by means of an explicit set of definitions for the categories employed. </p>
+<h2><a name="section7">7. Conclusions</a></h2>
+<p>
+Metadata plays a key role in organizing the ways in which a language corpus can be meaningfully processed. It records the interpretive framework within which the components of a corpus were selected and are to be understood. Its scope extends from straightforward labelling and identification of individual items to the detailed representation of complex interpretive data associated with their linguistic components. As such, it is essential to proper use of a language corpus. </p>
+
+<h3><a name="notes">Notes</a></h3>
+<p>
+<a name="footnote1" href="#ref1">1</a>. In International Standard Bibliographic Description, the term <em>computer file</em> is used to refer to any computer-held object, such as a language corpus, or a component of one. </p>
+<p>
+<a name="footnote2" href="#ref2">2</a>. <a href="bibliography.htm#dunlop1995">Dunlop 1995</a> and <a href="bibliography.htm#burnard1999">Burnard 1999</a> describe the use of the TEI Header in the construction of the BNC.</p>
+<p>
+<a name="footnote3" href="#ref3">3</a>. Checking that the categories have been correctly applied, i.e. that for example the thing tagged as a 'foo' actually <em>is</em> a 'foo', is not in general an automatable process, since it depends on human judgment as noted above. </p>
+
+<div class="guidesfooter">
+<p>
+<a href="chapter4.htm">Continue to Chapter Four: Character encoding in corpus construction</a>
+</p>
+<p>
+<a href="index.htm">Return to the table of contents</a>
+</p>
+<p>
+&#169; Lou Burnard 2004. The right of Lou Burnard to be identified as the Author of this Work has been asserted by him in accordance with the Copyright, Designs and Patents Act 1988.
+</p>
+<p>
+All material supplied via the Arts and Humanities Data Service is protected by copyright, and duplication or sale of all or any part of it is not permitted, except that material may be duplicated by you for your personal research use or educational purposes in electronic or print form. Permission for any other use must be obtained from the Arts and Humanities Data Service.
+</p>
+<p>
+Electronic or print copies may not be offered, whether for sale or otherwise, to any third party.
+</p>
+</div></div></div></td></tr></table>
+</body>
+</html>

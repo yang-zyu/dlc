@@ -1,0 +1,41 @@
+
+.document-menu-heading {  font-size: 10px }
+.document-menu-item {  font-size: 10px }
+.document-menu-background {}
+
+a.image:link {color:black}
+a.image:visited {color:black}
+
+A:hover   { background: yellow}
+
+p {line-height:1.3em}
+
+.global-heading1 {font-size: 1.3em; font-weight: bold; margin: 0.3em 0 0.3em 0; color: #c60000}
+.global-heading2 {font-size: 1.3em; font-weight: bold; margin: 0.3em 0 0.3em 0;}
+
+div#menu {border: 0px solid silver; margin-top: 20px; margin-left: 15px; left: 50px; top: 69px; width: 150px; padding-right: 0px}
+
+div#menu a {background-color: #eee; display: block; padding:0.4em; margin:0.5em 0.3em 0.5em 0; border: 1px solid silver; text-decoration:none; font-size:0.9em;}
+div#menu a:hover {background-color: #ddd}
+
+div#menu a.noborder {border:0; background-color:#fff}
+div#menu a.noborder:hover {background-color:#fff}
+
+.foot {font-size:0.8em}
+
+div#a1 {left: 230px; top: 69px; padding-right:30%; position:absolute}
+div#a2 {font-size:0.8em; border: 16px solid silver; position:relative}
+p.guidesauthor {font-size: 0.9em ; color: #c60000}
+div.guidesfooter {font-size:0.8em; border-top: 1px solid silver; padding-top:1em;}
+
+/* extensions for "Developing Linguistic Corpora" */
+
+div#a3 {left: 230px; top: 10px; padding-right:30%; position:relative}
+p.caption {font-size: small; font-style: italic}
+p.definition {font-weight: bold; border-style: solid; border-width: thin; padding: 0.2cm}
+p.example {margin-left: 30px}
+p.small_example {font-size: small; margin-left: 10px}
+p.principle {font-weight: bold; border-style: solid; border-width: thin; padding: 0.2cm}
+p.wordlist {font-style: italic; margin-left: 30px}
+table.small_example {font-size: small; margin-left: 10px}
+dt {font-style: italic}

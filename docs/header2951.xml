@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader type="ISBD-ER">
+      <fileDesc>
+         <titleStmt>
+            <title type="main">Developing Linguistic Corpora</title>
+            <author>Wynne, Martin</author>
+            <author>Sinclair, John</author>
+            <author>Leech, Geoffrey</author>
+            <author>Burnard, Lou</author>
+            <author>McEnery, Anthony</author>
+            <author>Xiao, Richard</author>
+            <author>Thompson, Paul</author>
+         </titleStmt>
+         <extent>
+            <seg type="designation">Text data</seg>
+            <seg type="size">29 files: 2 MB</seg>
+         </extent>
+         <publicationStmt>
+            <authority>Deposited by <name>Wynne, Martin</name><date>2018</date>
+            </authority>
+            <distributor>
+               <orgName type="OTA">Oxford Text Archive</orgName>
+               <placeName>Oxford</placeName>
+               <address>
+                  <orgName type="OTA">Oxford Text Archive</orgName>
+                  <orgName type="Bodleian">Bodleian Libraries</orgName>
+                  <addrLine>Broad St</addrLine>
+                  <addrLine>Oxford</addrLine>
+                  <addrLine>OX1 3BG</addrLine>
+               </address>
+               <email>ota@bodleian.ox.ac.uk</email>
+            </distributor>
+            <idno type="ISBN">ISBN 1842172050</idno>
+            <idno type="OTA">2951</idno>
+            <idno type="ota">2951</idno>
+	           <idno type="PURL">http://purl.ox.ac.uk/ota/2951</idno>
+        <availability n="OTA-new" status="free" rend="visible">
+          <licence target="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+	  Distributed by the University of Oxford under a Creative Commons
+	  Attribution-NonCommercial-ShareAlike 3.0 Unported License.</licence>
+        </availability>
+            <date>2000</date>
+         </publicationStmt>
+         <notesStmt>
+            <note type="summary">
+ 		<p>Individual chapters are as follows:</p>
+                <list>
+                   <item>Sinclair, J. 2005. "Corpus and Text - Basic Principles"</item>
+                   <item>Leech, G. 2005. "Adding Linguistic Annotation"</item>
+                   <item>Burnard, Lou. 2005. "Metadata for Corpus Work"</item>
+                   <item>McEnery, A. and Xiao, R. 2005. "Character Encoding in Corpus Construction"</item>
+                   <item>Thompson, P. 2005. "Spoken Language Corpora"</item>
+                   <item>Wynne, M. 2005. "Archiving, Distribution and Preservation"</item>
+                </list>
+            </note>
+         </notesStmt>
+         <sourceDesc>
+	           <bibl>Wynne, M (editor). Developing Linguistic Corpora: a Guide to Good Practice. Oxford: Oxbow Books. 2005 (Series: AHDS guides to good practice) ISBN 1-84217-205-0. Produced by Oxbow Books for the Arts and Humanities Data Service.</bibl>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+               <p>This work was produced by staff at the Oxford Text Archive at Oxford University Computing Servicess, as part of the series of AHDS Guides to Good Proactice. Each of these guides includes tips for discovering and re-using extant digital data, information about creating and managing new digital data, and guidance to ensure proper preparation and documentation of this data for long-term archiving.</p>
+	       <p>The Arts and Humanities Data Service was jointly funded by the Arts and Humanities Research Board, the Joint information Systems Committee of the UK's Higher Education Funding Councils, and by the participating universities.</p>
+         </projectDesc>
+         <editorialDecl>
+            <p>Encoding format: HTML</p>
+         </editorialDecl>
+         <classDecl>
+            <taxonomy xml:id="OTASH">
+               <bibl>University of Oxford Text Archive Subject Headings</bibl>
+            </taxonomy>
+            <taxonomy xml:id="LCSH">
+               <bibl>Library of Congress Subject Headings</bibl>
+            </taxonomy>
+         </classDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date>2005</date>
+         </creation>
+         <langUsage>
+            <language ident="eng">English</language>
+         </langUsage>
+      <textClass>
+        <keywords scheme="#OTASH">
+          <term type="genre">Linguistic corpora</term>
+        </keywords>
+        <keywords scheme="#OTASH">
+          <term type="resource_type">Corpus</term>
+        </keywords>
+        <keywords scheme="#OTASH">
+          <term type="resource_type">Handbooks</term>
+        </keywords>
+        <keywords scheme="#LCSH">
+          <term type="genre">Linguistics</term>
+        </keywords>
+        <keywords scheme="#LCSH">
+          <term type="genre">Linguistics analysis (Linguistics)</term>
+        </keywords>
+      </textClass>
+         <textClass>
+            <keywords scheme="http://www.ota.ox.ac.uk/processing">
+               <term type="class">legacy</term>
+               <term type="license">Free for non-commercial use</term>
+            </keywords>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change>
+            <date>2018-03-13</date>
+            <label>cataloguer</label>
+            <name>Wynne, Martin</name>TEIXML header composed </change>
+      </revisionDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <div type="OTA-filemap" rend="visible" n="unrestricted">
+            <ab type="dir">
+               <seg type="part">1</seg>
+               <ptr type="resourcePart" target="download"/>
+            </ab>
+         </div>
+      </body>
+  </text>
+</TEI>

@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head><meta content="text/html; charset=UTF-8" http-equiv="Content-type" />
+<title>Developing Linguistic Corpora: a Guide to Good Practice</title>
+<link href="exec.css" type="text/css" rel="stylesheet" />
+ <link rel="stylesheet" href="guides.css" type="text/css">
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="framework"><tr><td class="framework" align="left" valign="top"><!-- ******** START COMPONENT: main-document ********--><!-- index --><div><a href="http://www.ota.ox.ac.uk/documents/creating/dlc/"><img height="69" width="359" style="padding:0.5em" alt="AHDS LitLangLing Logo" border="0" src="ahds_litlangling_logo.gif" /></a> <div id="menu"><a href="index.htm" class="noborder"><img alt="Guide to Good Practice Post" border="0" height="95" width="145" src="g2gp-post.gif" /></a><a href="index.htm">Table of Contents</a><a href="chapter4.htm">Previous Chapter</a><a href="chapter6.htm">Next Chapter</a><a href="bibliography.htm">Bibliography</a>
+<h4>Sections in this chapter:</h4>
+<a href="#section1">1. Introduction</a>
+<a href="#section2">2. Data collection</a>
+<a href="#section3">3. Transcription</a>
+<a href="#section4">4. Representation and annotation</a>
+<a href="#section5">5. Access</a>
+
+</div><div id="a1"><hr size="1" noshade="noshade" width="100%" /><br /> 
+<div class="global-heading1">Developing Linguistic Corpora:<br/>a Guide to Good Practice</div>
+<div class="global-heading2">Spoken language corpora</div>
+<p class="guidesauthor">Paul Thompson, University of Reading <br/>&#169; Paul Thompson 2004</p>
+
+<h2><a name="section1">1. Introduction</a></h2>
+
+<p>
+In this chapter I will look at some of the issues involved in developing a corpus of spoken language data. 'Spoken language' is here taken to mean any language whose original presentation was in oral form, and although spoken language data can include recordings of scripted speech, I will focus mainly on the use of recordings of naturally occurring spoken language. The chapter is merely a brief introduction to a highly complex subject; for more detailed treatments, see the collection of papers in <a href="bibliography.htm#leech1995b">Leech, Myers and Thomas (1995)</a>. </p>
+<p>
+Spoken language data are notoriously difficult to work with. Written language data are typically composed of orthographic words, which can easily be stored in electronic text files. As other papers in this collection show, there may be problems in representing within a corpus the original presentational features of the text, such as layout, font size, indentations, accompanying diagrams, and so on, but the problem is primarily one of describing what can be seen. In the case of spoken language data, however, the primary problem is one of representing in orthographic or other symbolic means, for reading on paper or screen, what can be heard, typically, in a recording of a speech event in the past. Whereas the words in a written language corpus have an orthographic existence prior to the corpus, the words that appear in an orthographic transcription of a speech event constitute only a partial representation of the original speech event. To supplement this record of the event, the analyst can capture other features, by making either a prosodic or phonetic transcription, and can also record contextual features. However, as Cook (<a href="bibliography.htm#cook1995">1995</a>) convincingly argues in his discussion of theoretical issues involved in transcription, the record remains inevitably partial. </p>
+<p>
+Not only the transcription but also the process of data capture itself is problematic: an audio recording of a speech event is only an incomplete view of what occurred, not only because of possible technical deficiencies, but also because visual and tactile features are lost. To compensate for this, video can also be used, but a video recording also presents a view of the event that in most cases cannot capture the views of the participants in the event themselves. </p>
+<p>
+Bearing in mind, then, the complexities of working with spoken language data, the corpus developer needs to approach the task of compiling a spoken language corpus with some circumspection, and design the project carefully. Clearly much will depend upon the purposes for which the corpus is being developed. For a linguist whose interest is in the patterning of language and in lexical frequency over large quantities of data, there will be little need for sophisticated transcription, and the main consideration will be the quantity and speed of transcription work. Sinclair (<a href="bibliography.htm#sinclair1995">1995</a>) advocates simple orthographic transcriptions without indication even of speaker identity, in order to produce large amounts of transcripts. The phonetician, on the other hand, requires less data, but a high degree of accuracy and detail in the phonetic transcription of recordings, with links, where possible, to the sound files. For a discourse analyst, richly detailed information on the contextual features of the original events will be needed. Underlying the development of the corpus, therefore, will be tensions between the need for breadth and the levels of detail that are possible given the resources available. An excess of detail can make the transcripts less readable, but a parsimonious determination in advance of what level of detail is required also runs the danger of removing from the data information that has potential value to the analyst at a later stage.</p>
+<p>
+The amount of documentation compiled (such as explanation of the coding schemes used, records of data collection procedures, and so on) will also depend on whether or not the resources are to be made available to the public, for example, or whether the corpus has to be deposited with the funding body that is sponsoring the research project. </p>
+<p>
+Leech, Myers and Thomas (<a href="bibliography.htm#leech1995b">1995</a>) describe five stages in the development and exploitation of what they term 'computer corpora of spoken discourse': </p>
+<table border="1">
+<tr>
+<td>
+1</td>
+<td>
+Recording </td>
+</tr>
+<tr>
+<td>
+2 </td>
+<td>
+Transcription </td>
+</tr>
+<tr>
+<td>
+3 </td>
+<td>
+Representation (mark-up) </td>
+</tr>
+<tr>
+<td>
+4 </td>
+<td>
+Coding (or annotation) </td>
+</tr>
+<tr>
+<td>
+5 </td>
+<td>
+Application </td>
+</tr>
+</table>
+<p class="caption">Table 3: Stages in the development of spoken corpora (after Leech, Myers and Thompson)</p>
+<p>
+This provides a useful framework for our discussion of the issues involved in developing a spoken language corpus, although we will change the headings for two stages and we will also collapse two stages (3 and 4) into one.</p>
+<p>
+For the first stage, it is necessary to discuss both the technicalities of audio/video recording, and also the collection of contextual information, and of the consent of participants; consequently, we will call this section 'Data collection'. Following the collection of spoken language data, the transcription process begins. The third stage, 'Representation', involves the computerization of the transcription, which makes it machine-readable. Consequent to this, the analyst may wish to add further information to the original transcription, such as classification of the speech acts in the data, or ascription of each word to a grammatical class, and this stage is referred to as 'Annotation'. For brevity's sake, the two stages are treated together here, under the heading of 'Markup and annotation'. In the final stage, which will be headed 'Access', the emphasis will be on access to the corpus, rather than on application, as it is not possible to discuss the range of possible approaches to application, but it is important to think of whether or not the corpus will be made available to other researchers, and in what form it can be made available if so desired.</p>
+<p>
+The headings for the following discussion, therefore, will be: </p>
+<table border="1">
+<tr>
+<td>
+1</td>
+<td>
+Data collection </td>
+</tr>
+<tr>
+<td>
+2 </td>
+<td>
+Transcription </td>
+</tr>
+<tr>
+<td>
+3 </td>
+<td>
+Markup and annotation </td>
+</tr>
+<tr>
+<td>
+4 </td>
+<td>
+Access </td>
+</tr>
+</table>
+<h2><a name="section2">2. Data collection</a></h2>
+<p>
+Before gathering the data, it is important to ensure that you receive informed consent from those who feature clearly either in the transcripts or the video recordings. This can sometimes compromise the purpose of the data collection in research projects that investigate spontaneously occurring speech events, since participants may behave differently if aware that they are being recorded; the BAAL <em>Recommendations on Good Practice in Applied Linguistics</em> (<a href="http://www.baal.org.uk/goodprac.htm#6">http://www.baal.org.uk/goodprac.htm#6</a>) gives useful guidance on the researcher's responsibilities to informants. Typically, proof of consent is kept on paper, but in some cases it can be kept on the original recording. If a university seminar is being recorded, for example, it may be easier to film a member of the research team asking all participants for consent rather than to ask all the participants to sign forms. </p>
+<p>
+The development of audio recording technology has had a profound effect on linguistics, as it has made possible the capture of previously ephemeral language events. A criticism of early collections of data, however, was that the recording quality was often not good and it was therefore difficult for transcribers to hear the words clearly. Where high quality data were required, studio recordings were used. But it should be noted that it is often difficult to capture the more spontaneous types of speech event in the studio. </p>
+<p>
+Technological advances mean that there are more options available now. The EAGLES recommendations for spoken texts suggest the use of headphone microphones for best quality recording, and this would suit data capture under controlled conditions. For recording of naturalistic data, an alternative is to use flat microphones, which are far less obtrusive. As recording devices become smaller, it is possible also to wire up each participant in an event; Perez-Parent (<a href="bibliography.htm#perez2000">2002</a>) placed a minidisk (MD) recorder and lapel microphone on each child in the recording of primary school pupils in the Literacy Hour and then mixed the six channels to produce a high quality reproduction of the audio signals. She also recorded the event on video (with a single video camera) and later aligned the orthographic transcript with the six audio channels and the video. </p>
+<p>
+The EAGLES recommendations (<a  href="bibliography.htm#gibbon1998">Gibbon, Moore and Winski 1998</a>) also propose that digital recording devices be used, as analogue speech recordings tend to degrade, and are not as easy to access when they need to be studied. Digital recordings can be copied easily on to computers, and backed up on to CDs or DVDs, with minimal loss of quality. Interestingly, they recommend the use of DAT tapes for data capture. The document was published in 1996, and DAT may have been the best choice at the time, but there are several other options available now, including the use of MD technology. This illustrates the difficulty of making recommendations about the best technology to employ &mdash; advances in technology make it impossible to give advice that will remain up-to-date. Rather than make recommendations about which data capture technology to use, therefore, I suggest that you seek advice from technical staff, especially sound engineers, and search the Internet for guidance. </p>
+<p>
+With the development of cheaper video cameras and of technology for the digitization of video, the use of video in data capture is becoming more common, and the possibilities for including the video data in a corpus are increasing. Before using a video, however, a number of questions need to be posed: </p>
+<ul>
+<li>
+Firstly, what relation will the video data have to the transcripts and to the corpus? Will the video data act simply as an aid to the transcriber, providing an extra source of information, or will the video contain information that could not otherwise be captured?
+</li>
+<li>
+Secondly, whose perspective is represented by the video camera angle: that of the observer or that of the participants? Cook (<a  href="bibliography.htm#cook1995">1995</a>) points out that video angles tend to give the view primarily of the observer. If the aim is to gain the perspectives of the participants, how should the camera(s) be positioned?
+</li>
+<li>
+Thirdly, will the transcript be aligned to the video? Will the transcript include coding of the gestural and other non-linguistic features? Such coding would make the video machine-readable.
+</li>
+</ul>
+<p>
+As indicated above, design issues are subject to tensions between the desire for fuller representation of the event and the threat of excessive quantities of data, and of excessive amounts of time and work. </p>
+<p>
+In addition to the recording of the event, a certain amount of background and circumstantial information will be needed as well. In advance of the recording work, it is recommended that procedures be set up for the collection of this information, especially in cases where recordings are to be made by people other than the main team of researchers. The BNC, for example, contains recordings made by speaker participants themselves, of conversations with friends and colleagues, and these people had to record speaker information and consent on forms supplied to them by the project. If the event is to be recorded in audio only, the observer(s) will need to make notes on the event that could assist the transcriber, and which could help to explicate the interactions recorded. Finally, detailed notes should also be kept at the recording stage about the equipment used, the conditions, and about any technical problems encountered, as this information could be of relevance at a later stage, for example, in classifying recordings by quality. It is important, too, to determine in advance what information is required and to make notes under various headings, following a template, to ensure that there is a consistency in type and degree of detail of information for each recording. </p>
+
+<h2><a name="section3">3. Transcription</a></h2>
+
+<p>
+By placing transcription after the section on data collection, I do not want to suggest that each section is neatly compartmentalized and that you do not need to consider transcription issues until after the data have been collected. In the planning stages, it will usually be necessary to decide what features of speech are to be focused on, and therefore what aspects of the speech event need to be captured, and to what level of detail. However, it is convenient to deal with transcription separately. </p>
+<p>
+Firstly, let us consider the <em>design</em> of a transcription system. Edwards (<a href="bibliography.htm#edwards1993">1993</a>) states three principles: </p>
+<ol>
+<li>
+Categories should be:
+	<ul>
+	<li>systematically discriminable</li>
+	<li>exhaustive</li>
+	<li>systematically contrastive</li>
+	</ul>
+	</li>
+<li>Transcripts should be readable (to the researcher) </li>
+<li>For computational tractability, mark-up should be
+	<ul>
+	<li>systematic</li>
+	<li>predictable.</li>
+	</ul>
+</li>
+</ol>
+<p>
+These three principles refer to the creation of categories, and to questions of readability, both for the human researcher and for the computer. This last point, that of machine readability, will be taken up in the next section. </p>
+<p>
+At the first level, a decision must be made as to whether the transcription is to be <em>orthographic</em>, <em>prosodic</em>, or <em>phonetic</em>, or more than one of these. If a combination is to be used, this means that two, possibly three levels of transcriptions must be aligned somehow. This can be done, for example, by placing the levels of transcription on different lines, or in different columns. Either of these options will have implications for mark-up of the data (see the following section below). </p>
+<p>
+For an orthographic transcription, decisions will have to be taken over spelling conventions. The easiest solution to this problem is to choose a major published dictionary and follow the spelling conventions specified there. This will at least provide guidance on standard orthographic words, but there will be several features of spoken language that are not clearly dealt with, and decisions must be taken over how best to represent them in orthographic form. How, for example, to represent a part of an utterance that sounds like 'gonna'? Should this be standardized to 'going to'? Would standardization present an accurate representation of the language of the speaker? If, on the other hand, a decision is taken to use 'gonna' in some cases, and 'going to' in others, what criteria are to be employed by the transcriber for distinguishing one case from the other (this is what Edwards points to in the expression 'systematically discriminable' above)? The more people there are transcribing the data, the more important it is to provide explicit statements on the procedures to be followed. </p>
+<p>
+ Reference books may also not provide all the information that is needed. Where words from languages other than the main language(s) of the speakers appear, what spelling is to be used? This is particularly a problem for languages that employ different orthographic systems, such as Japanese. The Japanese city of <IMG SRC="hiroshima.jpg" WIDTH="27" HEIGHT="13" BORDER="0" ALT="Hiroshima"> <!-- [readers will only be able to see these <em>kanji</em> characters if they are viewing this document as Unicode - Editor] --> is usually written in English as Hiroshima (using the Hepburn romanization system), but can also be written as Hirosima, following <em>kunreisiki</em> (also known as Kunrei-shiki) romanization. According to a report on different systems of romanization conducted by the United Nations Group of Experts on Geographical Names (UNGEGN, <a href="http://www.eki.ee/wgrs/">http://www.eki.ee/wgrs/</a>), the latter is the official system, but the former is most often used in cartography. There is no right or wrong choice, but a decision must be made which can then be set down in writing, so that all transcribers adopt the same conventions, which in turn will lead to consistency in the transcription process.</p>
+<p>
+Decisions will also need to be taken over how to represent non-verbal data, such as contextual information, paralinguistic features, gaps in the transcript, pauses, and overlaps. Let us take the example of pauses. One reason why pauses are important in spoken language data is that they indicate something of the temporal nature of spoken language and it is this temporality that distinguishes spoken language from written language. Pauses can be classified as 'short' or 'long', but this begs the questions of where the dividing line between the two lies, as well as where the distinction between a short pause and 'not a pause' can be drawn, and to whom the pause appears to be either 'long' or 'short'. Typically, in transcripts for linguistic analysis, a short pause can range in length from less than 0.2 seconds to less than 0.5 seconds, depending on whether the researcher is interested in turn-taking or in information packaging (Edwards 1993: 24). To avoid the problem of terming a pause either 'short' or 'long', the exact length of the pause can be indicated, but strict measurement of pauses could be highly time-consuming and does not necessarily help the analyst to assess the quality of the pause relative to the speech rate of a speaker, or the perceptions of listeners. </p>
+<a name="figure5"/>
+<table border="1">
+<tr>
+<td rowspan="2">
+Du Bois et al 1990</td>
+<td bgcolor="grey">
+Short pause </td>
+<td bgcolor="grey">
+Longer pause </td>
+<td bgcolor="grey">
+Timed pause </td>
+</tr>
+<tr>
+<td>
+.. </td>
+<td>
+... </td>
+<td>
+... (1.5) </td>
+</tr>
+<tr>
+<td rowspan="2">
+MacWhinney (1991)</td>
+<td bgcolor="grey">
+Short pause </td>
+<td bgcolor="grey">
+Longer pauses </td>
+<td bgcolor="grey">
+Timed pause </td>
+</tr>
+<tr>
+<td>
+# </td>
+<td>
+##, ###, #long </td>
+<td>
+#1_5 </td>
+</tr>
+<tr>
+<td rowspan="2">
+Rosta (1990) </td>
+<td bgcolor="grey">
+Short pause </td>
+<td bgcolor="grey">
+Long pause </td>
+<td></td>
+</tr>
+<tr>
+<td>
+&lt;,&gt; </td>
+<td>
+&lt;,,&gt; </td>
+<td></td>
+</tr>
+<tr>
+<td rowspan="2">
+Svartvik and Quirk (1980)</td>
+<td bgcolor="grey">
+Brief pause </td>
+<td bgcolor="grey">
+Unit pause </td>
+<td bgcolor="grey">
+Longer pauses </td>
+</tr>
+<tr>
+<td>
+. </td>
+<td>
+_ </td>
+<td>
+_. __. </td>
+</tr>
+</table>
+<p class="caption">
+Figure 5. Four approaches to the symbolic representation of pauses and pause length, adapted from Johansson (1995)</p>
+<p>
+Apart from the question of how a pause is to be classified, there is also the issue of determining a set of symbolic representations of pauses for use in the transcript. Johansson (<a href="bibliography.htm#johansson1995">1995</a>) gives the following examples of sets of conventions used by four different researchers:<a name="ref1" href="#footnote1"><sup>1</sup></a></p>
+<p>
+Edwards (<a href="bibliography.htm#edwards1993">1993:11</a>) raises the issue of how speaker turns can be represented spatially in transcription in the Figure below. These can be portrayed in contrasting systems of spatial arrangement of speakers' turns, as shown below. In the first of these, the vertical arrangement, each speaker's turn appears in sequence below the previous turn, and this, Edwards suggests, implies parity of engagement and influence. The columnar representation, on the other hand, helps to highlight asymmetries in relationships between the participants, although it is difficult to represent conversations with more than two speakers. </p>
+
+
+<table class="small_example">
+<tr><td><strong>Vertical</strong>
+</td></tr>
+
+<tr><td>
+A: Did you just get [back]? <br/>
+B: [Yes] or rather 2 hours ago. It was a great film.<br/>
+A: Really? 
+</td></tr></table>
+<hr/>
+
+
+
+<table class="small_example" border = "0">
+<tr>
+<td><b>Column</b>
+
+</td>
+</tr>
+
+<tr>
+<td>
+<strong>Speaker A </strong></td>
+<td>
+<strong>Speaker B</strong></td>
+</tr>
+<tr>
+
+<td>
+Did you just get [back]? </td>
+<td>
+ [Yes] or rather 2 hours ago. It was a great film. </td>
+</tr>
+<tr>
+<td></td>
+<td>
+Really? </td>
+<td></td>
+</tr>
+</table>
+
+
+<p class="caption">Figure 6: spatial arrangement of turns, in vertical and column formats, after Edwards 1993.</p>
+<p>
+In summary, then, a number of transcription conventions need to be established, guided by the principles that Edwards has described (above). Throughout the transcription process, as is also case for the data collection stage, it is important that records are kept carefully so that discrepancies can be dealt with. This is especially true in cases where there are a number of transcribers working on the same project. Where the categories established and the codes adopted consist of non-finite sets, it is advisable to set up some form of easily accessible database or web-based list that all members of the team can add to, where they can add new entries, with commentary, as new set members appear. </p>
+<p>
+The key word is <em>consistency</em>. While the human reader may easily notice that a particular contraction (for example, <em>can't</em>) has sometimes been mistyped as <em>ca'nt</em>, a computer cannot detect the error unless it is programmed to do so. It is essential, therefore, that clear guidelines are established, to reduce the risk of inconsistency. Furthermore, it is important to implement a thorough procedure for checking each transcription. This might involve each transcriber checking the work of a fellow transcriber, or it may be a case of the researchers methodically monitoring the work of the transcribers. To ensure that the correct procedure is followed, it is useful to have checkers record the completion of the review in the documentation of the corpus. In the header for each transcript file in the Michigan Corpus of Academic Spoken English (MICASE), for example, the names of the transcribers, and the checkers, and dates for completion of each of these stages, are given. Pickering et al (<a href="bibliography.htm#pickering1996">1996</a>) provide a thorough account of procedures they followed in assessing the reliability of prosodic transcription in the Spoken English Corpus. </p>
+
+<h2><a name="section4">4. Representation and annotation</a></h2>
+<p>
+So far we have considered only the problems of transcription, and we have concentrated on issues relating to how the data can be represented in different ways. The discussion has centred on representations that can be read or heard by the human eye or ear, and has largely ignored the question of machine readability. While it is easy enough for example, to display information in single or multiple columns, as in the example given above, using a particular word-processing package, it cannot be assumed that all users of a corpus will have the same package nor that their analytical software will be able to cope with the coding of the data used by the word processor. It is necessary therefore to choose a method for marking up the data and adding annotations that is relatively independent of particular operating systems and commercial packages. Mark-up languages such as HTML and XML are widely accepted means to achieve this. Both HTML and XML are forms of SGML (Standardized General Markup Language) and one of the advantages that XML has over HTML is that it is, as its name (eXtensible Markup Language) suggests, extensible. Users can extend the range of elements, attributes and entities that are permitted in a document as long as they state the rules clearly. XML is now the chosen form of mark-up for future releases of the BNC and many other corpora that follow the Guidelines of the Text Encoding Initiative. There is no space to describe these guidelines in detail, and they have been discussed in other chapters (Burnard, <a href="chapter3.htm">chapter 3</a>) in this book. What is worthy of note here, however, is that the TEI Guidelines provide a set of categories for the description of spoken language data, and that they form a powerful and flexible basis for encoding and interchange. </p>
+<p>
+It is usually hoped that corpora will be made available for other researchers to use, and in this case it is necessary to create a corpus that is in a suitable format for interchange of the resource. There are also closely related issues to do with preservation of the resource (see <a href="chapter6.htm">chapter 6</a>). I recently requested a copy of an Italian corpus called PIXI [corpus may be ordered from <a href="http://www.ota.ox.ac.uk/texts/1372.html">OTA</a>] from the Oxford Text Archive. The files for the corpus are in WordPerfect format, and I opened them using both a text editor, and WordPerfect 9. As the 'Readme' file informs me, there are some characters in the files that are specific to WordPerfect and which do not convert to ANSI. Some of these characters were used in this corpus to mark overlap junctures. </p>
+<p>
+The version I see shows: </p>
+<p class="small_example">
+&lt;S C&gt;&lt;p&gt; $$Li avevo gia?presi, esatto.%% Poi pero? $ne avevo ordinati -% <br/>
+&lt;S A&gt;&lt;p&gt; $Allora aspetti che guardiamo% se e?rimasto:
+</p>
+<p>
+This shows how the particularities of word-processors and the character sets that they use create problems in interchange between different programmes, even between different versions of the same word-processing package. </p>
+<p>
+Where interchange is an issue, then, consideration must be given to finding ways to encode the transcription in such way that the files can be exchanged between computers running on different operating systems, and using different programmes for text browsing and analysis. </p>
+<p>
+A second possible desideratum is that data can be represented in a variety of ways. As noted above in <a href="#figure5">Figure 5</a>, there are several different conventions for indicating pauses in a transcript. If one has access to transcripts transcribed following MacWhinney's conventions, and wanted to convert one's own transcripts that had been transcribed using a different set of conventions, it would be useful to be able automatically generate a representation of one's data that conformed to MacWhinney's system. This would require that all short pauses be transformed from their original representation to a single hash sign, and timed pauses be shown as a single hash sign followed by the measurement of the pause. </p>
+<p>
+For both these purposes, use of the TEI Guidelines in order to encode the transcripts following standardized procedures offers a good solution. The TEI recommendations provide a comprehensive set of conventions for the underlying representation of data. The analyst then has the potential to represent the data in any number of ways, through the use of stylesheets. If you want to present your transcript in the MacWhinney style, you can create a stylesheet which specifies, among other things, that all pauses which have been marked up following TEI guidelines as &lt;pause dur="short"/&gt; be converted to single hash marks. A second stylesheet, for the Du Bois et al system, would transform &lt;pause dur="short"/&gt; to .., and obviously the same set of transformations would be specified for any other feature of the transcript, for which an equivalent exists in the Du Bois et al system. </p>
+<p>
+Johansson (<a href="bibliography.htm#johansson1995">1995</a>) presents a clear exposition on the TEI guidelines for the encoding of spoken language data. While some of the details are slightly outdated (for the latest statement, see the online TEI Guidelines, particularly sections 11, 14, 15 and 16, at <a href="http://www.tei-c.org/P4X/">http://www.tei-c.org/P4X/</a>; the chapter 'A Gentle Introduction to XML' , is also recommended). The tagset specified in the TEI guidelines for transcriptions of speech covers the following components: </p>
+<ul>
+<li>
+utterances
+</li>
+<li>
+pauses
+</li>
+<li>
+vocalized but non-lexical phenomena such as coughs
+</li>
+<li>
+kinesic (non-verbal, non-lexical) phenomena such as gestures
+</li>
+<li>
+entirely non-linguistic events occurring during and possibly influencing the course of speech (e.g. sound of truck reversing in road next to lecture hall)
+</li>
+<li>
+writing
+</li>
+<li>
+shifts or changes in vocal quality (TEI Guidelines 11.1).
+</li>
+</ul>
+<p>
+This tagset is a list of options, and it is also extensible. Johansson demonstrates how other tags can be used to mark tonic units, for example, and how entities can be created to indicate intonational features of speech. Furthermore, a TEI document has to contain both a header and a body, and the header will contain the background information about the recording/event (making such information easily accessible) and a clear statement of what mark-up conventions are followed in the document. </p>
+<p>
+The TEI guidelines have been criticized by some as over-prescriptive and excessively complicated, and Johansson (<a href="bibliography.htm#johansson1995">1995</a>) addresses some of these criticisms. In defence of the TEI, it can be said that, although the verbosity of the coding leads to bloated files, the guidelines allow for reasonable degrees of flexibility, and promise to increase levels of interchangeability. In addition, the shift from SGML to XML for mark-up of the texts has given both compilers and users many more options. There are several commercial XML editing packages, and the latest versions of mainstream word-processors and internet browsers are XML-aware, which means that it is now easy to edit and to view XML files (the same was not true of SGML documents). Furthermore, with its growing uptake in industry, XML looks likely to become a standard for document mark-up. To create stylesheets for the specification of desired output formats, XSL (eXtensible Stylesheet Language; see <a href="http://www.w3.org/Style/XSL/">http://www.w3.org/Style/XSL/</a> for details) can be used. For updated information on TEI and its relation to XML, see Cover pages, <a href="http://xml.coverpages.org/tei.html">http://xml.coverpages.org/tei.html</a>. </p>
+<p>
+Where interchangeability is an important feature of the corpus, then, it is advisable to follow the TEI Guidelines. This will mean that some members of the research team will need to become familiar with the technicalities of XML editing, of DTD creation (document type definition) and, for the development of stylesheets, XSL (there are a number of free TEI stylesheets at <a href="http://www.tei-c.org/Stylesheets/">http://www.tei-c.org/Stylesheets/</a>). Other corpus developers may feel that this is beyond their needs or capabilities, however, and seek alternative methods. If a corpus of phonetic transcriptions is to be used only by a limited number of phoneticians, each of whom use the same software for reading and analyzing the corpus, it is not necessary to invest time in training the transcribers in XML. Questions that may need to be addressed, however, are: </p>
+<ul>
+<li>
+Can information be extracted from the files easily?
+</li>
+<li>
+Are tags unique and distinct?
+</li>
+<li>
+Do certain tags require the addition of an identifier for each instance?
+</li>
+<li>
+Is it useful to be able to remove all tags quickly?
+</li>
+<li>
+Is all the background information (details about participants, the context, etc) easily accessible?
+</li>
+</ul>
+<p>
+For information to be easily extracted, it is important that tags are unique and can be searched for without risk of ambiguity. It is important that the beginning and ending of a string of data that is coded in a particular way are clearly marked. If sequences of a feature are of interest, it may be helpful to give each occurrence a unique identifier (e.g., in a study of teacher talk, each instance of a teacher <em>initiation</em> move could be given an ID number as in &lt;tchr_init id="23"&gt;). The use of angle brackets for enclosing tags makes it easier to remove all tags in a single action (the text editor <em>NoteTab</em> &mdash; <a href="http://www.notetab.com/">http://www.notetab.com/</a> &mdash; has a 'Strip all tags' command that works on angle bracket delimited tags; similarly, <em>WordSmith Tools</em> has the option to ignore all strings with angle brackets). Background information, where relevant, should be easily accessible, either because it is contained within the files, or because it is stored in a database that is linked to the corpus. Failing this, the file naming system should provide clear indications of the contents of each file. </p>
+<p>
+Transcripts can now be linked to the original digitized recordings, either on audio or video. Roach and Arnfield (<a href="bibliography.htm#roach1995">1995</a>) describe their procedure for automatic alignment of audio with prosodic transcriptions, although this is highly sophisticated operation. A cruder alternative is to place markers in the transcript that point to precise timings within the sound files. To align video, audio and transcript, programmes such as the freeware programmes Anvil (<a href="http://www.dfki.uni-sb.de/~kipp/anvil/">http://www.dfki.uni-sb.de/~kipp/anvil/</a>) and Transana (<a href="http://www2.wcer.wisc.edu/Transana/">http://www2.wcer.wisc.edu/Transana/</a>) can be used.</p>
+<p>
+Lastly, a word on linguistic annotation. With written text, it is a relatively easy task to prepare a text for automated POS tagging using a tagger such as the CLAWS tagger that was used for the British National Corpus (<a href="http://www.comp.lancs.ac.uk/computing/research/ucrel/claws/">http://www.comp.lancs.ac.uk/computing/research/ucrel/claws/</a>) but spoken language data require a considerable amount of preprocessing, before an automatic tagger can deal with the input. Questions need to be posed about how to deal with false starts, repetitions (e.g. 'the the the the'), incomplete clauses, and so on: should they be removed? Should they be 'corrected'? For purposes of parsing, as Meyer (<a href="bibliography.htm#meyer2002">2002: 94-96</a>) explains, the questions are redundant - it is simply essential that the transcript be rendered 'grammatical', because a parser cannot deal with the input otherwise. A further question to consider in relation to annotation and the removal of 'ungrammaticality' from the transcripts is: if features are to be removed, are they permanently deleted or are they removed temporarily and restored to the transcript after the POS tagging has been completed? </p>
+
+<h2><a name="section5">5. Access</a></h2>
+
+<p>
+The final stage in the process of establishing a corpus of spoken language data, depending on the purposes for which the corpus is to be used, is that of making the corpus available to others. Funded research work often requires the researchers to deposit copies of the data with the funding body, but a more interesting possibility is to make the data accessible to the wider academic community. The printed version of the transcripts could be published, for example, but this restricts the kinds of analysis that can be made, and it is preferable to publish electronic versions where possible. The Oxford Text Archive (<a href="http://www.ota.ox.ac.uk/">http://www.ota.ox.ac.uk/</a>) acts as the repository for electronically-stored corpora and other forms of data collections in the UK, and there are similar centers in other countries. These are simply repositories, and do not provide an analytical interface to the data. An exciting new development is the MICASE corpus (<a href="http://www.lsa.umich.edu/eli/micase/index.htm">http://www.lsa.umich.edu/eli/micase/index.htm</a>), a collection of transcripts of lectures, seminars and other academic speech events, which is searchable on-line, through a web interface, that allows searches to be refined through specification of a range of parameters. Such open access promises to make the analysis of spoken language data easier for a wider audience, at no extra cost other than the Internet connection. The transcripts can also be downloaded in either HTML or SGML format. </p>
+<p>
+A criticism levelled against the Survey of English Usage and the BNC was that the listener could not access the audio recordings to hear the original and to make comparisons with the transcript. It is clearly of benefit to other researchers for the original recordings to be made available, as this is an extra source of information, and some corpus projects have provided such opportunities for access. The COLT corpus will be accessible through the Internet and a demo version is online at: <a href="http://torvald.aksis.uib.no/colt/">http://torvald.aksis.uib.no/colt/</a>. With each concordance line that appears, a link to a short audio file (.wav format) is included. MICASE, according to its website, plans to make the sound files available on CD-ROM to academic researchers, and also to make most of the sound files available on the web in RealAudio format: several of these files have been placed on the site, but they are not linked in any way to the transcripts and it is not possible to search through the sound files in any way. Due to certain speaker consent restrictions, furthermore, not all recordings can be published. <a href="bibliography.htm#thompson1995">Thompson, Anderson &amp; Bader (1995)</a> is an interesting account of the process of making audio recordings available on CD-ROM. </p>
+<p>
+The linking of the transcript to audio or audio files is an area for major development in the coming years, as retrieval and delivery technologies become more powerful and sophisticated. Spoken language is more than simply the written word, and the audio and video recordings of the original spoken language events offer invaluable resources for a richer record. As mentioned above, there are programmes such as <em>Transana</em> and <em>Anvil</em> which allow the analyst to link audio, video and transcript, but they also tie the user into the software. In order to view the project files, it is necessary to have a copy of the software. What is ideally needed is an independent means of linking transcript, audio and video that uses XML, Java or other web-friendly technologies efficiently so that the tools and resources can be accessed by anyone with a browser, and necessary plug-ins. </p>
+<p>
+As is the case with recording technologies, as discussed above, it is difficult to make any recommendations about the best formats for storage and delivery of a corpus and related data. For transfer of large quantities of data, such as audio or video recordings, CD-ROM and DVD offer the best options at present, but it is likely that new technologies for storage and transfer of data will develop. </p>
+<p>
+A major consideration in storing audio or video data is the size of each file (or clip). Obviously, the larger the clip, the longer it will take to load, and the more the demands that will be placed on processing capability. Compression technologies, such as mp3 for audio, make it possible to create smaller files. Web delivery of audio and video material to supplement a corpus is possible but at the moment the transfer rates are prohibitively slow. Streaming video has the potential to deliver data reasonably quickly for viewing purposes, but would be cumbersome to work with if alignment with the transcript were required. For the moment, at least, it seems that the best way to make a multimodal corpus available is through CD or DVD media. </p>
+<p>
+In summary then: </p>
+<ul>
+<li>
+The development of a corpus of spoken language data is a complex task and it requires careful planning.
+</li>
+<li>
+Planning is important to ensure that all relevant information is collected, and to assist in maintaining high levels of consistency (consistency of data quality, of transcription procedures and conventions, of markup and of information about the events)
+</li>
+<li>
+A choice needs to made between breadth and depth &mdash; between capturing large amounts of spoken language data, and annotating the data in great detail
+</li>
+<li>
+Where resources are available, try to keep as much data as possible and make it possible to represent the data in a variety of ways
+</li>
+<li>
+The possibilities for linking the transcript with audio/video files are limited at present, but should develop rapidly in coming years.
+</li>
+</ul>
+
+<div class="guidesfooter">
+<p>
+<a href="chapter6.htm">Continue to Chapter Six: Archiving, Distribution and Preservation</a>
+</p>
+<p>
+<a href="index.htm">Return to the table of contents</a>
+</p>
+<p>
+&#169; Paul Thompson 2004. The right of Paul Thompson to be identified as the Author of this Work has been asserted by him in accordance with the Copyright, Designs and Patents Act 1988.
+</p>
+<p>
+All material supplied via the Arts and Humanities Data Service is protected by copyright, and duplication or sale of all or any part of it is not permitted, except that material may be duplicated by you for your personal research use or educational purposes in electronic or print form. Permission for any other use must be obtained from the Arts and Humanities Data Service.
+</p>
+<p>
+Electronic or print copies may not be offered, whether for sale or otherwise, to any third party.
+</p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>

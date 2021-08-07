@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head><meta content="text/html; charset=UTF-8" http-equiv="Content-type" />
+<title>Developing Linguistic Corpora: a Guide to Good Practice</title>
+<link href="exec.css" type="text/css" rel="stylesheet" />
+ <link rel="stylesheet" href="guides.css" type="text/css">
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="framework"><tr><td class="framework" align="left" valign="top"><!-- ******** START COMPONENT: main-document ********--><!-- index --><div><a href="http://www.ota.ox.ac.uk/documents/creating/dlc/"><img height="69" width="359" style="padding:0.5em" alt="AHDS LitLangLing Logo" border="0" src="ahds_litlangling_logo.gif" /></a> <div id="menu"><a href="index.htm" class="noborder"><img alt="Guide to Good Practice Post" border="0" height="95" width="145" src="g2gp-post.gif" /></a><a href="index.htm">Table of Contents</a><a href="chapter1.htm">Previous Chapter</a><a href="chapter3.htm">Next Chapter</a><a href="bibliography.htm">Bibliography</a>
+<h4>Sections in this chapter:</h4>
+<a href="#section1">1. What is corpus annotation?</a>
+<a href="#section2">2. What different kinds of annotation are there?</a>
+<a href="#section3">3. Why annotate?</a>
+<a href="#section4">4. Useful standards for corpus annotation</a>
+<a href="#section5">5. The encoding of annotations</a>
+<a href="#section6">6. Annotation manual</a>
+<a href="#section7">7. Some 'provisional standards' of best practice for different linguistics levels</a>
+<a href="#section8">8. Evaluation of annotation: realism, accuracy and consistency</a>
+<a href="#section9">9. Getting down to the practical task of annotation</a>
+</div><div id="a1"><hr size="1" noshade="noshade" width="100%" /><br /> 
+<div class="global-heading1">Developing Linguistic Corpora:<br/>a Guide to Good Practice</div>
+<div class="global-heading2">Adding Linguistic Annotation</div>
+<p class="guidesauthor">Geoffrey Leech, Lancaster University<br/>&#169; Geoffrey Leech 2004</p>
+<h2><a name="section1">1. What is corpus annotation?</a></h2>
+<p>
+Corpus annotation is the practice of adding interpretative linguistic information to a corpus. For example, one common type of annotation is the addition of <em>tags</em>, or labels, indicating the word class to which words in a text belong. This is so-called part-of-speech tagging (or POS tagging), and can be useful, for example, in distinguishing words which have the same spelling, but different meanings or pronunciation. If a word in a text is spelt <em>present</em>, it may be a noun (= 'gift'), a verb (= 'give someone a present') or an adjective (= 'not absent'). The meanings of these same-looking words are very different, and also there is a difference of pronunciation, since the verb <em>present </em>has stress on the final syllable. Using one simple method of representing the POS tags &mdash; attaching tags to words by an underscore symbol &mdash; these three words may be annotated as follows: </p>
+<p class="example">
+<em>present</em>_NN1 (singular common noun)<br/>
+<em>present</em>_VVB (base form of a lexical verb)<br/>
+<em>present</em>_JJ (general adjective)<br/>
+</p>
+<p>
+Some people (notably John Sinclair &mdash; see <a href="chapter1.htm">chapter 1</a>) prefer not to engage in corpus annotation: for them, the unannotated corpus is the 'pure' corpus they want to investigate &mdash; the corpus without adulteration with information which is suspect, possibly reflecting the predilections, or even the errors, of the annotator. For others, annotation is a means to make a corpus much more useful &mdash; an enrichment of the original <b>raw corpus</b>. From this perspective, probably a majority view, adding annotation to a corpus is giving 'added value', which can be used for research by the individual or team that carried out the annotation, but which can also be passed on to others who may find it useful for their own purposes. For example, POS-tagged versions of major English language corpora such as the Brown Corpus, the LOB Corpus and the British National Corpus have been distributed widely throughout the world for those who would like to make use of the tagging, as well as of the original 'raw' corpus. In this chapter, I will assume that such annotation is a benefit, so long as it is done well, with an eye to the standards that ought to apply to such work. </p>
+
+<h2><a name="section2">2. What different kinds of annotation are there?</a></h2>
+
+<p>
+Apart from part-of-speech (POS) tagging, there are other types of annotation, corresponding to different levels of linguistic analysis of a corpus or text &mdash; for example: </p>
+
+<p>
+<em>
+phonetic annotation
+</em>
+<p class = "definition2">
+e.g. adding information about how a word in a spoken corpus was pronounced. prosodic annotation &mdash; again in a spoken corpus &mdash; adding information about prosodic features such as stress, intonation and pauses. syntactic annotation &mdash; e.g. adding information about how a given sentence is parsed, in terms of syntactic analysis into such units such phrases and clauses
+ </p>
+ 
+
+<em>
+semantic annotation
+</em>
+<p class = "definition2">
+e.g. adding information about the semantic category of words &mdash; the noun cricket as a term for a sport and as a term for an insect belong to different semantic categories, although there is no difference in spelling or pronunciation.
+ </p>
+ 
+
+<em>
+pragmatic annotation
+</em>
+<p class = "definition2">
+e.g. adding information about the kinds of speech act (or dialogue act) that occur in a spoken dialogue &mdash; thus the utterance okay on different occasions may be an acknowledgement, a request for feedback, an acceptance, or a pragmatic marker initiating a new phase of discussion.
+</p>
+
+<em>
+discourse annotation
+</em>
+<p class = "definition2">
+e.g. adding information about anaphoric links in a text, for example connecting the pronoun <em>them</em> and its antecedent <em>the horses</em> in: <em>I'll saddle <span style = "text-decoration:underline">
+the horses</span> and bring <span style = "text-decoration:underline">them</span> round</em>. [an example from the Brown corpus]
+</p>
+
+<em>
+stylistic annotation
+</em>
+<p class = "definition2">
+e.g. adding information about speech and thought presentation (direct speech, indirect speech, free indirect thought, etc.)
+</p>
+
+<em>
+lexical annotation
+</em>
+<p class = "definition2">
+adding the identity of the lemma of each word form in a text &mdash; i.e. the base form of the word, such as would occur as its headword in a dictionary (e.g. <em>lying</em> has the lemma LIE).
+</p>
+
+</dl>
+
+<p>
+(For further information on such kinds of annotation, see <a href="bibliography.htm#garside1997">Garside et al. 1997</a>.) In fact, it is possible to think up untold kinds of annotation that might be useful for specific kinds of research. One example is dysfluency annotation: those working on spoken data may wish to annotate a corpus of spontaneous speech for dysfluencies such as false starts, repeats, hesitations, etc. &mdash; see Lickley, no date). Another illustration comes from an area of corpus research which has flourished in the last ten years: the creation and study of learner corpora (<a href="bibliography.htm#granger1998">Granger 1998</a>). Such corpora, consisting of writing (or speech) produced by learners of a second language, may be annotated with 'error tags' indicating where the learner has produced errors, and what kinds of errors these are (<a href="bibliography.htm#granger2002">Granger et al 2002</a>).</p>
+
+<h2><a name="section3">3. Why annotate?</a></h2>
+
+<p>
+As I have already indicated, annotation is undertaken to give 'added value' to the corpus. A glance at some of the advantages of an annotated corpus will help us to think about the standards of good practice these corpora require. </p>
+
+<h3>
+Manual examination of a corpus </h3>
+<p>
+What has been built into the corpus in the form of annotations can also be extracted from the corpus again, and used in various ways. For example, one of the main uses of POS tagging is to enhance the use of a corpus in making dictionaries. Thus lexicographers, searching through a corpus by means of a concordancer, will want to be able to distinguish <em>separate</em> (verb) from <em>separate</em> (adjective), and if this distinction is already signalled in the corpus by tags, the separation can be automatic, without the painstaking search through hundreds or thousands of examples that might otherwise be necessary. Equally, a grammarian wanting to examine the use of progressive aspect in English (is working, has been eating, etc) can simply search, using appropriate search software, for sequences of BE (any form of the lemma) followed &mdash; allowing for certain possibilities of intervening words &mdash; by the <em>ing</em>-form of a verb. </p>
+
+<h3>
+Automatic analysis of a corpus
+</h3>
+<p>
+Similarly, if a corpus has been annotated in advance, this will help in many kinds of automatic processing or analysis. For example, corpora which have been POS-tagged can automatically yield frequency lists or frequency dictionaries with grammatical classification. Such listings will treat <em>leaves </em>(verb) and <em>leaves</em> (noun) as different words, to be listed and counted separately, as for most purposes they should be. Another important case is automatic parsing, i.e. the automatic syntactic analysis of a text or a corpus: the prior tagging of a text can be seen as a first stage of syntactic analysis from which parsing can proceed with greater success. Thirdly, consider the case of speech synthesis: if a text is to be read aloud by a speech synthesiser, as in the case of the 'talking books' service provided for the blind, the synthesiser needs to have the information that a particular instance of <em>sow</em> is a noun (= female pig) rather than a verb (as in to <em>sow seeds</em>), because this make a difference to the word's pronunciation. </p>
+
+<h3>
+Re-usability of annotations
+</h3>
+
+<p>
+Some people may say that the annotation of a corpus for the above cases is not needed, automatic processing could include the analysis of such features as part of speech: it is unnecessary thereafter to preserve a copy of the corpus with the built-in information about word class. This argument may work for some cases, but generally the annotation is far more useful if it is preserved for future use. The fact is that linguistic annotation cannot be done accurately and automatically: because of the complex and ambiguous nature of language, even a relatively simple annotation task such as POS-tagging can only be done automatically with up to 95% to 98% accuracy. This is far from ideal, and to obtain an optimally tagged corpus, it is necessary to undertake manual work, often on a large scale. The automatically tagged corpus afterwards has to be post-edited by a team of human beings, who may spend thousands of hours on it. The result of such work, if it makes the corpus more useful, should be built into a tagged version of the corpus, which can then be made available to any people who want to use the tagging as a springboard for their own research. In practice, such corpora as the LOB Corpus and the BNC Sampler Corpus have been manually post-edited and the tagging has been used by thousands of people. The BNC itself &mdash; all 100 million words of it &mdash; has been automatically tagged but has not been manually post-edited, as the expense of undertaking this task would be prohibitive. But the percentage of error &mdash; 2% &mdash; is small enough to be discounted for many purposes. So my conclusion is that &mdash; as long as the annotation provided is a kind useful to many users &mdash; an annotated corpus gives 'value added' because it can be readily shared by others, apart from those who originally added the annotation. In short, an annotated corpus is a sharable resource, an example of the electronic resources increasingly relied on for research and study in the humanities and social sciences. </p>
+
+<h3>Multi-functionality</h3>
+<p>
+If we take the re-usability argument one step further, we note that annotation often has many different purposes or applications: it is <b>multi-functional</b>. This has already been illustrated in the case of POS tagging: the same information about the grammatical class of words can be used for lexicography, for parsing, for frequency lists, for speech synthesis, and for many other applications. People who build corpora are familiar with the idea that no one in their right mind would offer to predict the future uses of a corpus &mdash; future uses are always more variable than the originator of the corpus could have imagined! The same is true of an annotated corpus: the annotations themselves spark off a whole new range of uses which would not have been practicable unless the corpus had been annotated. </p>
+<p>
+However, this multi-functionality argument does not always score points for annotated corpora. There is a contrary argument that the annotations are more useful, the more they are designed to be specific to a particular application. </p>
+
+<h2><a name="section4">4. Useful standards for corpus annotation</a></h2>
+
+<p>
+What I have said above about the usefulness of annotated corpora, of course, depends crucially on whether the annotation has been well planned and well carried out. It is important, then, to recommend a set of standards of good practice to be observed by annotators wherever possible. </p>
+
+<h3>Annotations should be separable</h3>
+
+<p>
+The annotations are added as an 'optional extra' to the corpus. It should always be easy to separate the annotations from the raw corpus, so that the raw corpus can be retrieved exactly in the form it had before the annotations were added. This is common sense: not all users will find the annotations useful, and annotation should never result in any loss of information about the original corpus data. </p>
+<h3>Detailed and explicit documentation should be provided</h3>
+<p>
+Lou Burnard (in <a href="chapter3.htm">chapter 3</a>) emphasises the need to provide adequate documentation about the corpus and its constituent texts. For similar reasons, it is important to provide explicit and detailed documentation about the annotations in an annotated corpus. Documentation to be provided about annotations should include the following, so that users will know precisely what they're getting: </p>
+
+<dl>
+<em>
+How, where, when and by whom were the annotations applied?
+</em>
+<p class = "definition2">
+Mention any computer tools
+used, and any phases of revision resulting in new releases, etc.
+</p>
+
+
+<em>
+What annotation scheme was applied?
+</em>
+<p class = "definition2">
+An annotation scheme is an explanatory system supplying information about the annotation practices followed, and the explicit interpretation, in terms of linguistic terminology and analysis, for the annotation. This is very important &mdash; Section 6 below will deal with annotation schemes.
+</p>
+
+
+<em>
+What coding scheme was used for the annotations?
+</em>
+<p class = "definition2">
+By coding scheme, I mean the set of symbolic conventions employed to represent the annotations themselves, as distinct from the original corpus. Again, I will devote a separate section to this (Section 5).
+</p>
+  
+
+<em>
+How good is the annotation?
+</em>
+<p class = "definition2">
+It might be thought that annotators will always proclaim the excellence of their annotations. However, although some aspects of 'goodness' or quality elude judgement, others can be measured with a degree of objectivity: accuracy and consistency are two such measures. Annotators should supply what information they can on the quality of the annotation. (see further Section 8 below.)
+</p>
+</dl>
+
+<h3>Arguably, the annotation practices should be linguistically consensual</h3>
+<p>
+This and the following maxims are more open to debate. Any type of annotation presupposes a typology &mdash; a system of classification &mdash; for the phenomena being represented. But linguistics, like most academic disciplines, is sadly lacking in agreement about the categories to be used in such description. Different terminologies abound, and even the use of a single term, such as <em>verb phrase</em>, is notoriously a prey to competing theories. Even an apparently simple matter, such as defining word classes (POS), is open to considerable disagreement. Against this background, it might be suggested that corpus annotation cannot be usefully attempted: there is no absolute 'God's truth' view of language or 'gold standard' annotation against which the decision to call word <em>x</em> as noun and word <em>y</em> a verb can be measured. </p>
+<p>
+However, looking at linguistics more carefully, we can usually observe a certain consensus: examining a text, people can more or less agree which words are nouns, verbs, and so on, although they may disagree on less clear cases. If this is reasonable, then an annotation scheme can be based on a 'consensual' set of categories on which people tend to agree. This is likely to be useful for other users and therefore to fit in with the re-usability goal for annotated corpora. An annotation scheme can additionally make explicit how the annotations apply to the 10% or so of less clear cases, so that users will know how borderline phenomena are handled. Significantly, this consensual approach to categories is found not only in annotated corpora, but also in another key kind of linguistic resource &mdash; dictionaries. If, on the other hand, an annotator were to use categories specific to a particular theory and out of line with other theories, the annotated corpus would suffer in being less useful as a sharable resource. </p>
+
+<h3>Annotation practices should respect emergent <em>de facto</em> standards </h3>
+
+<p>
+This principle of good practice may be seen as complementary to the preceding one. By <em>de facto</em> standards, I mean some kind of standardisation that has already begun to take place, due to influential precedents or practical initiatives in the research community. These contrast with de iure or 'God's truth' standards, which I have just argued do not exist. 'God's truth' standards, if they existed, would be imposed from on high. <em>De facto</em> standards, on the other hand, emerge (often gradually) from the research community in a bottom-up manner. </p>
+<p>
+<em>De facto</em> standards encapsulate what people have found to work in the past, which argues that they should be adopted by people undertaking a new research project, to support a growing consensus in the community. However, often a new project breaks new ground, for example with a different kind of data, a different language, a different purpose those of previous projects. It would clearly be a recipe for stagnation if we were to coerce new projects into the following exactly the practices of earlier ones. Nevertheless it makes sense for new projects to respect the outcomes of earlier projects, and only to depart from their practices where this can be justified. In 8 below, I will refer to some of the incipient standards for different kinds of annotation and mark-up. These can only be presented tentatively, however, as the practice of corpus annotation is continually evolving. </p>
+<p>
+In the early 1990s, the European Union launched an initiative under the name of EAGLES (Expert Advisory Groups on Language Engineering Standards) with the goal of encouraging standardisation of practices for natural language processing in academia and industry, particularly but not exclusively in the EU. One group of 'experts' set to work on corpora, and from this and later initiatives there emerged various documents specifying guidelines (or provisional standards) for corpus annotation. In the following sections, I will refer to the EAGLES documents where appropriate. </p>
+<h2><a name="section5">5. The encoding of annotations</a></h2>
+<p>
+But before focussing on annotation schemes and the linguistic categories they incorporate, it will be helpful to touch briefly on the encoding of annotations &mdash; that is, the actual symbolic representations used. This means we are for the moment concentrating on how annotations are outwardly manifested &mdash; for example, what you see when you inspect a corpus file on your computer screen &mdash; rather than what their meaning is, in linguistic terms. </p>
+<p>
+As an example, I have already mentioned one very simple device, the underscore symbol, to signal the attachment of a POS tag to a word, as in <em>Paula</em>_NP1. The presentation of the tag itself may be complex or simple. Here, for convenience, the category of 'singular proper noun' is represented by a sequence of three characters, N for noun, P for proper (noun), and 1 for singular. </p>
+<p>
+One basic requirement is that the POS tag (or any other annotation device) should be unambiguous in representing what it stands for. Another requirement, useful for everyday purposes such as reading a concordance on a screen, is brevity: the three characters, in this case, concisely signal the three distinguishing grammatical features of the NP1 category. A third requirement, more useful in some contexts than in others, is that the annotation device should be transparent to the human reader rather than opaque. The example NP1 is at least to some degree intelligible, and is less mystifying than it would be if some arbitrary sequence of symbols, say Q!@, had been chosen. </p>
+<p>
+The type of tag illustrated above originated with the earliest corpus to be POS-tagged (in 1971), the Brown Corpus. More recently, since the early 1990s, there has been a far-reaching trend to standardize the representation of all phenomena of a corpus, including annotations, by the use of a standard mark-up language &mdash; normally one of the series of related languages SGML, HTML, and XML (see Lou Burnard, <a href="chapter3.htm">chapter 3</a>). One advantage of using these languages for encoding features in a text is that they provide a general means of interchange of documents, including corpora, between one user or research site and another. In this sense, SGML/HTML/XML have developed into a world-wide standard which can be applied to any language, to spoken as well as to written language, and to languages of different historical periods. Furthermore, the use of the mark-up language itself can be efficiently parsed or validated, enabling the annotator to check whether there are any ill-formed traits in the markup, which would signal errors or omissions. Yet another advantage is that, as time progresses, tools of various kinds are being developed to facilitate the processing of texts encoded in these languages. One example is the set of tools developed at the Human Communication Research Centre, Edinburgh, for supporting linguistic annotation using XML (<a href="bibliography.htm#carletta2002">Carletta et al. 2002</a>). </p>
+<p>
+However, one drawback of these mark-up languages is that they tend to be more 'verbose' than the earlier symbolic conventions used, for example, for the Brown and LOB corpora. In this connection we can compare the LOB representation <em>Paula</em>_NP1 (<a href="bibliography.htm#johansson">Johansson 1986</a>) with the SGML representation to be found in the BNC (first released in 1995): &lt;w NP1&gt;<em>Paula</em>, or the even more verbose version if a closing tag is added, as required by XML: &lt;w type="NP1"&gt;<em>Paula</em>&lt;/w&gt;. In practice, this verbosity can be avoided by a conversion routine which could produce an output, if required, as simple as the LOB one <em>Paula</em>_NP1. This, however, would require a further step of processing which may not be easy to manage for the technically less adept user. </p>
+<p>
+Another possible drawback of the SGML/XML type of encoding is that it requires a high-resolution standard of validation which sorts ill with the immensely unpredictable nature of a real-world corpus. This is a particular problem if that corpus contains spontaneous spoken data and data from less 'orderly' varieties of written language &mdash; e.g. mediaeval manuscripts, old printed editions, advertisements, handwritten personal letters, collections of children's writing. Attempts have been made to make this type of logical encoding more accessible, by relaxing standards of conformance. Hence there has grown up a practice of encoding corpora using a so-called 'pseudo-SGML', which has the outward characteristics of SGML, but is not subjected to the same rigorous process of validation (so that errors of well-formedness may remain undetected). </p>
+<p>
+Within the overall framework SGML, different co-existing encoding standards have been proposed or implemented: notably, the CDIF standard used for the mark-up of the BNC (see <a href="bibliography.htm#burnard1995">Burnard 1995</a>) and the CES recommended as an EAGLES standard (<a href="bibliography.htm#ide1996">Ide 1996</a>). One further drawback of the SGML/XML approach to encoding is that it assumes, by default, that annotation has a 'parsable' hierarchical tree structure, which does not allow cross-cutting brackets as in &lt;x ...&gt; ... &lt;y...&gt; ... &lt;x/&gt; ... &lt;y/&gt;. Any corpus of spoken data, in particular, is likely to contain such cross-bracketing, for example in the cross-cutting of stretches of speech which need to be marked for different levels of linguistic information &mdash; such phenomena as non-fluencies, interruptions, turn overlaps, and grammatical structure are prone to cut across one another in complex ways. </p>
+<p>
+This difficulty can be overcome within SGML/XML, although not without adding considerably to the complexity of the mark-up &mdash; for example, by copious use of pointer devices (in the BNC) or by the use of so-called stand-off annotation (<a href="bibliography.htm#carletta2002">Carletta et al. 2002</a>). </p>
+<p>
+It is fair to say, in conclusion, that the triumph of the more advanced SGML/HTML/XML style of encoding is in the long run assured. But because of the difficulties I have mentioned, many people will find it easier meanwhile to follow the lead of other well-known encoding schemes &mdash; such as the simpler styles of mark-up associated with the Brown and ICE families of corpora, or with the CHILDES database of child language data. </p>
+<p>
+CHILDES ('child language data exchange system') is likely to be the first choice not only for those working on child language corpora, but on related fields such as second language acquisition and code-switching. As the name suggests, CHILDES is neither a corpus nor a coding scheme in itself, but it provides both, operating as a service which pools together the data of many researchers all over the world, using a common coding and annotation schemes, and common software including annotation software. </p>
+
+<h2><a name="section6">6. Annotation manual</a></h2>
+
+<p>
+Why do we need an annotation manual? This document is needed to explain the annotation scheme to the users of an annotated corpus. Typically such manuals originate from sets of guidelines which evolve in the process of annotating a corpus &mdash; especially if hand editing of the corpus has been undertaken. A most carefully worked-out annotation scheme was published as a weighty book by Geoffrey Sampson (<a href="bibliography.htm#sampson1995">1995</a>). This explained in detail the parsing scheme of the SUSANNE corpus (a syntactically-annotated part of the Brown corpus). Sampson made an interesting analogy between developing an annotation scheme and laying down a legal system by the tradition of common law &mdash; the 'case law' of annotation evolves, rather as the law evolves over time, through the precedent of earlier cases and the setting of new precedents as need arises.</p>
+<p>
+Although annotation manuals often build up piecemeal in this way, for the present purpose we should see them as completed documents intended for corpus users. They can be thought of as consisting of two sections &mdash; (a) a list of annotation devices and (b) a specification of annotation practices &mdash; which I will illustrate, as before, using the familiar case of a POS tagging scheme (for an example, see <a href="bibliography.htm#johansson1986">Johansson, 1986,</a> for the LOB Corpus, or Sampson, (<a href="bibliography.htm#sampson1995">1995</a>, Ch.3 for the SUSANNE Corpus). </p>
+
+<h3>
+A list of annotation devices with brief explanations
+</h3>
+
+<p>This list acts as a glossary &mdash; a convenient first port of call for people trying to make sense of the annotations. For POS tagging, the first thing to list is the tagset &mdash; i.e., the list of symbols used for representing different POS categories. Such tagsets vary in size, from about 30 tags to about 270 tags. The tagset can be listed together with a simple definition and exemplification of what the tag means: </p>
+<p class="example">
+NN1 singular common noun (e.g. <em>book, girl</em>)<br/>
+NN2 plural common noun (e.g. <em>books, girls</em>)<br/>
+NP1 singular proper noun (e.g. <em>Susan, Cairo</em>)<br/>
+etc. </p>
+<h3>A specification of annotation practices </h3>
+<p>
+This gives an account of the various annotation decisions made in: </p>
+<ol type="a">
+<li>
+segmentation: e.g. assignment of POS tags assumes a prior segmentation of the corpus into words. This may involve 'grey areas' such as how to deal with hyphenated words, acronyms, enclitic forms such as the <em>n't</em> of <em>don't</em>.
+</li>
+<li>
+embedding: e.g. in parsing, some units, such as words and phrases, may be included in other units, such as clauses and sentences; certain embeddings, however, may be disallowed. In effect, a grammar of the parsing scheme has to be supplied. Even POS tagging has to involve some embedding when we come to segment examples such as <em>the New York-Los Angeles flight</em>.
+</li>
+<li>
+the rules or guidelines for assigning particular annotation devices to particular stretches of text.
+</li>
+</ol>
+
+<p>
+The last of these, (c), is the most important: the guidelines on how to annotate particular pieces of text can be elaborated almost <em>ad infinitum</em>. Taking again the example of POS tagging, consider what this means with a particular tag such as NP1 (singular proper noun). In the automatic tagging process, a dictionary that matches words to tags can make a large majority of such decisions without human intervention. But problems arise, as always, with 'grey areas' that the manual must attempt to specify. For example, should New York be tagged as one example of NP1 or two? Should the tag NP1 apply to <em>[the] Pope, [the] Renaissance, Auntie, Gold</em> (in <em>Gold Coast</em>), <em>Fifth</em> (in Fifth Avenue), <em>T</em> and <em>S</em> (in <em>T S Eliot</em>), <em>Microsoft </em>and <em>Word </em>in <em>Microsoft Word</em>? If not, what alternative tags should be applied to these cases? The manual should if possible answer such questions in a principled way, so that consistency of annotation practices between different texts and different annotators can be ensured and verified. But inevitably some purely arbitrary distinctions have to be made. Languages suffer to varying extents from ambiguity of word classifications, and in a language like English, a considerable percentage of words have to be tagged variably according to their context of occurrence. </p>
+<p>
+Other languages have different problems: for example, in German the initial capital is used for common nouns as well as a proper nouns, and cannot be used as a criterion for NP1. In Chinese, there is no signal of proper noun status such as capital letters in alphabetic languages. Indeed, more broadly considered, the whole classification of parts of speech in the Western tradition is of doubtful validity for languages like Chinese. </p>
+<h2><a name="section7">7. Some 'provisional standards' of best practice for different linguistics levels</a></h2>
+<p>
+In this section I will briefly list and comment on some previous work in developing provisional <em>de facto</em> standards (see 4 above) of good practice for different levels of linguistic annotation. The main message here is that anyone starting to undertake annotation of a corpus at a particular level should take notice of previous work which might provide a model for new work. There are two caveats, however: (a) these are only a few of the references that might be chased up, and (b) most of these references are for English. If you are thinking of annotating a corpus of another language, especially one which corpus linguistics has neglected up to now, it makes sense to hunt down any work going forward on that language, or on a closely related language. For this purpose, grammars, dictionaries and other linguistic publications on the language should not be neglected, even if they belong to the pre-corpus age. </p>
+
+<h3>Part-of-speech (POS) tagging</h3>
+<ul>
+<li>
+The 'Brown Family' of corpora (consisting of the Brown Corpus, the LOB Corpus, the Frown Corpus and the FLOB Corpus) makes use of a family of similar tagging practices, originated at Brown University and further developed at Lancaster. The two tagsets (C5 and C7) used for the tagging of the British National Corpus are well known (see <a href="bibliography.htm#garside1997">Garside et al. 1997</a>: 254-260).
+</li>
+<li>
+An EAGLES document which recommends flexible 'standard' guidelines for EU languages is to be found in Leech and Wilson (<a href="bibliography.htm#leech1994">1994</a>), revised and abbreviated in Leech and Wilson (<a href="bibliography.htm#leech1999">1999</a>).
+</li>
+<li>
+Note that POS tagging schemes are often part of parsing schemes, to be considered under the next heading.
+</li>
+</ul>
+
+<h3>Syntactic annotation </h3>
+<ul>
+<li>
+A well-developed parsing scheme already mentioned is that of the SUSANNE Corpus, Sampson (<a href="bibliography.htm#sampson1995">1995</a>).
+</li>
+<li>
+The Penn Treebank and its accompanying parsing scheme has been the most influential of constituent structure schemes for syntax. (see <a href="bibliography.htm#marcus1993">Marcus et al 1993</a>)
+</li>
+<li>
+Other schemes have adopted a dependency model rather than a constituent structure model &mdash; particularly the Constraint Grammar model of Karlsson et al. (<a href="bibliography.htm#karlsson1995">1995</a>).
+</li>
+<li>
+<a href="bibliography.htm#leech1995a">Leech, Barnett and Kahrel (1995)</a> is another EAGLES 'standards-setting' document, this time focussing on guidelines for syntactic annotation. Because there can be fundamentally different models of syntactic analysis, this document is more tentative (even) than the Leech and Wilson one for POS tagging.
+</li>
+</ul>
+
+<h3>Prosodic annotation </h3>
+<ul>
+<li>
+The standard system for annotating prosody (stress, intonation, etc.) is ToBI (= Tones and Break Indices), which comes with its own speech-processing platform. Its phonological model originated with <a href="bibliography.htm#pierrehumbert1980">Pierrehumbert (1980)</a>. The system is partially automated, but needs to be substantially adapted for fresh languages and dialects.
+</li>
+
+<li>
+ToBI is well supported by dedicated software and a committed research community. On the other hand, it has met with criticism, and two alternative annotation systems worth examining are INTSINT (see <a href="bibliography.htm#hirst1991">Hirst 1991</a>) and TSM &mdash; tonetic stress marks (see <a href="bibliography.htm#knowles1996">Knowles et al. 1996)</a>.
+</li>
+
+<li>
+For a survey of prosodic annotation of dialogue, see <a href="bibliography.htm#grice2000">Grice et al. (2000: 39-54).</a>
+</li>
+</ul>
+ 
+<h3>Pragmatic/Discourse annotation </h3>
+
+<p>
+For corpus annotation, it is difficult to draw a line between pragmatics and discourse analysis.
+</p>
+
+<ul>
+<li>
+An international Discourse Resource Initiative (DRI) came up with some recommendations for the analysis of spoken discourse at the level of dialogue acts (= speech acts) and at higher levels such as dialogue transactions, constituting a kind of 'grammar' of discourse. These were set out in the DAMSL manual (= Dialog Act Markup in Several Layers) (<a href="bibliography.htm#allen1997">Allen and Core 1997</a>).
+</li>
+
+<li>
+Other influential schemes are those of TRAINS, VERBMOBIL, the Edinburgh Map Task Corpus, SPAAC (<a href="bibliography.htm#leech2003">Leech and Weisser 2003</a>). These all focus on practical task-oriented dialogue. One exceptional case is the Switchboard DAMSL annotation project (<a href="bibliography.htm#stolcke2000">Stolcke et al. 2000</a>), applied to telephone conversational data.
+</li>
+
+<li>
+Discourse can also be analysed at the level of anaphoric relations (e.g. pronouns and their antecedents &mdash; see <a href="bibliography.htm#garside1997">Garside et al 1997:66-84</a>).
+</li>
+
+<li>
+A survey of pragmatic annotation is provided in <a href="bibliography.htm#grice2000">Grice et al. (2000: 54-67)</a>.
+</li>
+
+<li>
+A European project MATE (= Multi-level annotation, tools engineering) has tackled the issue of standardization in developing tools for corpus annotation, and more specifically for dialogue annotation, developing a workbench and an evaluation of various schemes, investigating their applicability across languages (<a href="http://mate.nis.sdu.dk/">http://mate.nis.sdu.dk/</a>).
+</li>
+</ul>
+
+
+<h3>Other levels of annotation </h3>
+<p>
+There is less to say about other levels of annotation mentioned in 2 above, either because they are less challenging or have been less subject to efforts of standardization. Examples particularly worth notice are: </p>
+<dl>
+<em>
+<b>phonetic annotation</b>
+</em>
+<p class = "definition2">
+SAMPA (devised by <a href="bibliography.htm#wells1992">Wells et al 1992</a>) is a convenient way of representing phonetic (IPA) symbols in 7-bit ASCII characters. It can be useful for any parts of spoken transcriptions where pronunciation has to be represented &mdash; but it is now giving way to Unicode.
+</p>
+<em>
+<b>stylistic annotation</b>
+</em>
+<p class = "definition2">
+Semino and Short (<a href="bibliography.htm#semino2003">2003</a>) have developed a detailed annotation scheme for modes of speech and thought representation &mdash; one area of considerable interest in stylistics. This has been applied to a varied corpus of literary and non-literary texts.
+</p>
+
+</dl>
+<h2><a name="section8">8. Evaluation of annotation: realism, accuracy and consistency</a></h2>
+<p>
+In section 4 I mentioned that the <b>quality</b> or 'goodness' of annotation was one important &mdash; though rather unclear &mdash; criterion to be sought for in annotation. Reverting to the POS-tagging example once again, we may distinguish two quite different ideas of quality. The first refers to the linguistic <b>realism</b> of the categories. It would be possible to invent tags which were easy to apply automatically with 100% accuracy &mdash; e.g. by arbitrarily dividing a dictionary into 100 parts and assigning a set of 100 tags to words in the dictionary according to their alphabetical order &mdash; but these tags would be useless for any serious linguistic analysis. Hence we have to make sure that our tagset is well designed to bring together in one category words which are likely to have psychological and linguistic affinity, i.e. are similar in terms of the syntactic distribution, their morphological form, and/or their semantic interpretation. </p>
+<p>
+A second, less abstract, notion of quality refers not to the tagset, but to the accuracy and consistency with which it is applied. </p>
+<p>
+<b>Accuracy </b>refers to the percentage of words (i.e. word tokens) in a corpus which are correctly tagged. Allowing for ambiguity in tag assignment, this is sometimes divided into two categories &mdash; precision and recall &mdash; see <a href="bibliography.htm#halteren1999">van Halteren (1999: 81-86)</a>. </p>
+<p class="example">
+<b>Recall </b>is the extent to which all correct annotations are found in the output of the tagger.<br/>
+<b>Precision </b>is the extent to which incorrect annotations are rejected from the output. </p>
+<p>
+The obvious question to ask here is: what is meant by 'correct'? The answer is: 'correctness' is defined by what the annotation scheme allows or disallows &mdash; and this is an added reason why the annotation scheme has to be specific in detail, and has to correspond as closely as possible with linguistic realities recognized as such.. </p>
+<p>
+For example, automatic taggers can achieve tagging as high as 98% correct. However, this is not as good as it could be, so the automatic tagging is often followed by a <b>post-editing</b> stage in which human analysts correct any mistakes in the automatic tagging, or resolve any ambiguities. </p>
+<p>
+The first question here is: is it possible for hand-editors to achieve 100% accuracy? Most people will find this unlikely, because of the unpredictable peculiarities of language that crop up in a corpus, and because of the failure of even the most detailed annotation schemes to deal with all eventualities. Perhaps between 99% and 99.5% accuracy might be the best that can be achieved, given that unclear and unprecedented cases are bound to arise. Nevertheless, 99.5% accuracy achieved with the help of a human post-editor would still be preferable to 96% or 97% as the result of just automatic tagging. Accuracy is therefore one criterion of quality in POS-tagging, and indeed in any annotation task. </p>
+<p>
+A second question that may be asked is: how consistently has the annotation task been performed? One way to test this in POS tagging is to have two human annotators post-edit the same piece of automatically-tagged text, and to determine in what percentage of cases they agree with one another. The more this consistency measure (called <b>inter-rater agreement</b>) approaches 100%, the higher the quality of the annotation. (Accuracy and consistency are obviously related: if both raters achieve 100% accuracy, it is inevitable that they achieve 100% consistency.) </p>
+<p>
+In the early days of POS-tagging evaluation, it was feared that up to 5% of words would be so uncertain in their word class that a high degree of accuracy and of consistency could not be achieved. However, this is too pessimistic: Baker (<a href="bibliography.htm#baker1997">1997</a>) and Voutilainen and Järvinen (<a href="bibliography.htm#voutilainen1995">1995</a>) have shown how scores not far short of 100% can be attained for both measures. </p>
+<p>
+A more sophisticated measure of inter-rater consistency is the so-called <b>kappa coefficient</b> (<em>K</em>). Strictly speaking, it is not enough to compare the output of two manual annotators by counting the percentage of cases where they agree or do not agree. This ignores the fact the even if the raters assigned the tags totally by chance, in a certain proportion of cases would be expected to be in agreement. This factor is built into the kappa coefficient, which is defined as follows: </p>
+<table>
+<tr>
+<td align="center">  
+K
+</td>
+<td align="center">  
+=
+</td>
+<td align="center">  
+<span style = "text-decoration:underline">P(A) - P(E)</span>
+</td>
+</tr>
+<tr>
+<td>  
+</td>
+<td>  
+</td>
+<td align="center">  
+1 - P(E)
+</td>
+</tr>
+</table>
+<p>
+"where <em>P(A)</em> is the proportion of time that the coders agree and <em>P(E)</em> is the proportion of times that we would expect them to agree by chance." (<a href="bibliography.htm#carletta1996">Carletta 1996</a>: 4). </p>
+<p>
+There is no doubt that annotation tends to be highly labour-intensive and time-consuming to carry out well. This is why it is appropriate to admit, as a final observation, that 'best practice' in corpus annotation is something we should all strive for &mdash; but which perhaps few of us will achieve. </p>
+
+<h2><a name="section9">9. Getting down to the practical task of annotation</a></h2>
+
+<p>
+To conclude, it is useful to say something about the practicalities of corpus annotation. Assume, say, that you have a text or a corpus you want to work on, and want to 'get the tags into the text'.</p>
+
+<ul>
+<li>
+It is not necessary to have special software. You can annotate the text using a general-purpose text editor or word processor. But this means the job has to be done by hand, which risks being slow and prone to error.
+</li>
+
+<li>
+For some purposes, particularly if the corpus is large and is to be made available for 
+general use, it is important to have the annotation validated. That is, the vocabulary of 
+annotation is controlled and is allowed to occur only in syntactically valid ways. A 
+validating tool can be written from scratch, or can use macros for word processors or editors.
+</li>
+
+<li>
+If you decide to use XML-compliant annotation, this means that you have the option to make use of the increasingly available XML editors. An XML editor, in conjunction with
+a DTD or schema, can do the job of enforcing well-formedness or validity without any
+programming of the software, although a high degree of expertise with XML will come in 
+useful.
+</li>
+
+<li>
+Special tagging software has been developed for large projects &mdash; for example the CLAWS tagger and Template Tagger used for the Brown Family or corpora and the BNC. Such 
+programs or packages can be licensed for your own annotation work. (For CLAWS, see the UCREL website <a href="http://www.comp.lancs.ac.uk/ucrel/">http://www.comp.lancs.ac.uk/ucrel/</a>.)
+</li>
+
+<li>
+There are tagsets which come with specific software &mdash; e.g. the C5, C7 and C8 tagsets for CLAWS, and CHAT for the CHILDES system, which is the de facto standard for language acquisition data.
+</li>
+
+<li>
+There are more general architectures for handling texts, language data and software systems for building and annotation corpora. The most prominent example of this is GATE ('general architecture for text engineering' <a href="http://gate.ac.uk">http://gate.ac.uk</a>) developed at the University of Sheffield.
+</li>
+ </ul>
+<div class="guidesfooter">
+<p>
+<a href="chapter3.htm">Continue to Chapter Three: Metadata for corpus work</a>
+</p>
+<p>
+<a href="index.htm">Return to the table of contents</a>
+</p>
+<p>
+&#169; Geoffrey Leech 2004. The right of Geoffrey Leech to be identified as the Author of this Work has been asserted by him in accordance with the Copyright, Designs and Patents Act 1988.
+</p>
+<p>
+All material supplied via the Arts and Humanities Data Service is protected by copyright, and duplication or sale of all or any part of it is not permitted, except that material may be duplicated by you for your personal research use or educational purposes in electronic or print form. Permission for any other use must be obtained from the Arts and Humanities Data Service.
+</p>
+<p>
+Electronic or print copies may not be offered, whether for sale or otherwise, to any third party.
+</p>
+</div>
+</div></div></td></tr></table>
+</body>
+</html>
