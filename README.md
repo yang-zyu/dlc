@@ -1,4 +1,4 @@
-An archived copy of ***Developing Linguistic Corpora: a Guide to Good Practice*** 
+An archived copy of ***Developing Linguistic Corpora: a Guide to Good Practice***.
 
 Licensed under: Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)
 
